@@ -78,10 +78,16 @@ class AlbumClientController extends AbstractActionController
         	return $this->redirect()->toRoute('album-client');
         }
         
-        return array(
+        $resp = $this->getRestResponse(sprintf("http://zf2.local/album-rest/%s", $id));
+        $respData = Json::decode($resp->getBody());
+        $album = new Album();
+        $album->exchangeArray(get_object_vars($respData->album));
+        $model = new ViewModel(array(
     		'id'    => $id,
-    		'album' => $this->getAlbumTable()->getAlbum($id)
-        );
+    		'album' => $album
+        ));
+        $model->setTemplate("album/album/delete.phtml");
+        return $model;
     }
     
     public function editAction() {
