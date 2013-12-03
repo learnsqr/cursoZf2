@@ -98,30 +98,14 @@ class ClassLoader
 
             return;
         }
-<<<<<<< HEAD
-        if (!isset($this->prefixes[$prefix])) {
-            $this->prefixes[$prefix] = (array) $paths;
-=======
 
         $first = $prefix[0];
         if (!isset($this->prefixes[$first][$prefix])) {
             $this->prefixes[$first][$prefix] = (array) $paths;
->>>>>>> 222c3f8f7959d957136cb17cabcda89bf74768ec
 
             return;
         }
         if ($prepend) {
-<<<<<<< HEAD
-            $this->prefixes[$prefix] = array_merge(
-                (array) $paths,
-                $this->prefixes[$prefix]
-            );
-        } else {
-            $this->prefixes[$prefix] = array_merge(
-                $this->prefixes[$prefix],
-                (array) $paths
-            );
-=======
             $this->prefixes[$first][$prefix] = array_merge(
                 (array) $paths,
                 $this->prefixes[$first][$prefix]
@@ -131,20 +115,14 @@ class ClassLoader
                 $this->prefixes[$first][$prefix],
                 (array) $paths
             );
->>>>>>> 222c3f8f7959d957136cb17cabcda89bf74768ec
         }
     }
 
     /**
      * Registers a set of classes, replacing any others previously set.
      *
-<<<<<<< HEAD
-     * @param string       $prefix  The classes prefix
-     * @param array|string $paths   The location(s) of the classes
-=======
      * @param string       $prefix The classes prefix
      * @param array|string $paths  The location(s) of the classes
->>>>>>> 222c3f8f7959d957136cb17cabcda89bf74768ec
      */
     public function set($prefix, $paths)
     {
@@ -153,11 +131,7 @@ class ClassLoader
 
             return;
         }
-<<<<<<< HEAD
-        $this->prefixes[$prefix] = (array) $paths;
-=======
         $this->prefixes[substr($prefix, 0, 1)][$prefix] = (array) $paths;
->>>>>>> 222c3f8f7959d957136cb17cabcda89bf74768ec
     }
 
     /**
@@ -223,10 +197,7 @@ class ClassLoader
      */
     public function findFile($class)
     {
-<<<<<<< HEAD
-=======
         // work around for PHP 5.3.0 - 5.3.2 https://bugs.php.net/50731
->>>>>>> 222c3f8f7959d957136cb17cabcda89bf74768ec
         if ('\\' == $class[0]) {
             $class = substr($class, 1);
         }

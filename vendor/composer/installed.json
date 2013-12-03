@@ -172,50 +172,6 @@
         ]
     },
     {
-        "name": "danielss89/zfc-user-admin",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/Danielss89/ZfcUserAdmin.git",
-            "reference": "a92eb8fc0ab7c87a3acad51c9c0bba404a0cf088"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/Danielss89/ZfcUserAdmin/zipball/a92eb8fc0ab7c87a3acad51c9c0bba404a0cf088",
-            "reference": "a92eb8fc0ab7c87a3acad51c9c0bba404a0cf088",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.3",
-            "zf-commons/zfc-admin": ">=0.1.1",
-            "zf-commons/zfc-user": ">=0.1.1"
-        },
-        "time": "2013-11-29 16:01:07",
-        "type": "library",
-        "installation-source": "source",
-        "autoload": {
-            "psr-0": {
-                "ZfcUserAdmin": "src/"
-            },
-            "classmap": [
-                "./Module.php"
-            ]
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "authors": [
-            {
-                "name": "Daniel Strøm",
-                "email": "daniel@eye4web.dk"
-            }
-        ],
-        "description": "An administration interface for ZfcUser.",
-        "homepage": "https://github.com/Danielss89/ZfcUserAdmin.git",
-        "keywords": [
-            "zf2"
-        ]
-    },
-    {
         "name": "zendframework/zend-developer-tools",
         "version": "dev-master",
         "version_normalized": "9999999-dev",
@@ -279,124 +235,6 @@
         ]
     },
     {
-        "name": "zf-commons/zfc-admin",
-        "version": "v0.1.1",
-        "version_normalized": "0.1.1.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/ZF-Commons/ZfcAdmin.git",
-            "reference": "85b4d647ba4d080f66d79b0a9deb986db093117c"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/ZF-Commons/ZfcAdmin/zipball/85b4d647ba4d080f66d79b0a9deb986db093117c",
-            "reference": "85b4d647ba4d080f66d79b0a9deb986db093117c",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.3",
-            "zendframework/zendframework": "2.*"
-        },
-        "suggest": {
-            "bjyoungblood/bjy-authorize": "Access control to protect ZfcAdmin against unauthorized users"
-        },
-        "time": "2013-04-23 09:31:59",
-        "type": "library",
-        "installation-source": "source",
-        "autoload": {
-            "psr-0": {
-                "ZfcAdmin": "src/"
-            },
-            "classmap": [
-                "./Module.php"
-            ]
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "BSD-3-Clause"
-        ],
-        "authors": [
-            {
-                "name": "Jurian Sluiman ",
-                "email": "jurian@juriansluiman.nl",
-                "homepage": "http://juriansluiman.nl/en/"
-            },
-            {
-                "name": "Martin Shwalbe",
-                "email": "martin.shwalbe@gmail.com",
-                "homepage": "http://hounddog.github.com"
-            }
-        ],
-        "description": "A generic Admin module for ZF2.",
-        "homepage": "https://github.com/juriansluiman/ZfcAdmin",
-        "keywords": [
-            "zf2"
-        ]
-    },
-    {
-        "name": "zf-commons/zfc-user",
-        "version": "0.1.2",
-        "version_normalized": "0.1.2.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/ZF-Commons/ZfcUser.git",
-            "reference": "7425ea50733caeeaeaeaa77ea7e910dab3434493"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/ZF-Commons/ZfcUser/zipball/7425ea50733caeeaeaeaa77ea7e910dab3434493",
-            "reference": "7425ea50733caeeaeaeaa77ea7e910dab3434493",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.3",
-            "zendframework/zend-authentication": "~2.1",
-            "zendframework/zend-crypt": "~2.1",
-            "zendframework/zend-form": "~2.1",
-            "zendframework/zend-inputfilter": "~2.1",
-            "zendframework/zend-loader": "~2.1",
-            "zendframework/zend-modulemanager": "~2.1",
-            "zendframework/zend-mvc": "~2.1",
-            "zendframework/zend-servicemanager": "~2.1",
-            "zendframework/zend-stdlib": "~2.1",
-            "zendframework/zend-validator": "~2.1",
-            "zendframework/zend-view": "~2.1",
-            "zf-commons/zfc-base": "0.*"
-        },
-        "suggest": {
-            "zendframework/zend-session": "To use the default authentication adapter."
-        },
-        "time": "2013-05-02 12:33:31",
-        "type": "library",
-        "installation-source": "source",
-        "autoload": {
-            "psr-0": {
-                "ZfcUser": "src/"
-            },
-            "classmap": [
-                "./Module.php"
-            ]
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "authors": [
-            {
-                "name": "Kyle Spraggs",
-                "email": "theman@spiffyjr.me",
-                "homepage": "http://www.spiffyjr.me/"
-            },
-            {
-                "name": "Evan Coury",
-                "email": "me@evancoury.com",
-                "homepage": "http://blog.evan.pro/"
-            }
-        ],
-        "description": "A generic user registration and authentication module for ZF2. Supports Zend\\Db and Doctrine2.",
-        "homepage": "https://github.com/ZF-Commons/ZfcUser",
-        "keywords": [
-            "zf2"
-        ]
-    },
-    {
         "name": "bjyoungblood/bjy-profiler",
         "version": "dev-master",
         "version_normalized": "9999999-dev",
@@ -441,6 +279,397 @@
             "db",
             "profiler",
             "zdt",
+            "zf2"
+        ]
+    },
+    {
+        "name": "zf-commons/zfc-user",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/ZF-Commons/ZfcUser.git",
+            "reference": "397ffe436a1aaf88d7f67b3d703773726a043ee4"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/ZF-Commons/ZfcUser/zipball/397ffe436a1aaf88d7f67b3d703773726a043ee4",
+            "reference": "397ffe436a1aaf88d7f67b3d703773726a043ee4",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3",
+            "zendframework/zend-authentication": "~2.1",
+            "zendframework/zend-crypt": "~2.1",
+            "zendframework/zend-form": "~2.1",
+            "zendframework/zend-inputfilter": "~2.1",
+            "zendframework/zend-loader": "~2.1",
+            "zendframework/zend-modulemanager": "~2.1",
+            "zendframework/zend-mvc": "~2.1",
+            "zendframework/zend-servicemanager": "~2.1",
+            "zendframework/zend-stdlib": "~2.1",
+            "zendframework/zend-validator": "~2.1",
+            "zendframework/zend-view": "~2.1",
+            "zf-commons/zfc-base": "0.*"
+        },
+        "suggest": {
+            "zendframework/zend-session": "To use the default authentication adapter."
+        },
+        "time": "2013-11-22 07:11:38",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "0.1.x-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "ZfcUser": "src/"
+            },
+            "classmap": [
+                "./Module.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "authors": [
+            {
+                "name": "Kyle Spraggs",
+                "email": "theman@spiffyjr.me",
+                "homepage": "http://www.spiffyjr.me/"
+            },
+            {
+                "name": "Evan Coury",
+                "email": "me@evancoury.com",
+                "homepage": "http://blog.evan.pro/"
+            }
+        ],
+        "description": "A generic user registration and authentication module for ZF2. Supports Zend\\Db and Doctrine2.",
+        "homepage": "https://github.com/ZF-Commons/ZfcUser",
+        "keywords": [
+            "zf2"
+        ]
+    },
+    {
+        "name": "hybridauth/hybridauth",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/hybridauth/hybridauth.git",
+            "reference": "6d89473b379fc7a904e69ee63f548af3308bd4d9"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/hybridauth/hybridauth/zipball/6d89473b379fc7a904e69ee63f548af3308bd4d9",
+            "reference": "6d89473b379fc7a904e69ee63f548af3308bd4d9",
+            "shasum": ""
+        },
+        "require": {
+            "ext-curl": "*",
+            "php": ">=5.2.0"
+        },
+        "time": "2013-02-21 06:45:16",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "Hybrid": "hybridauth/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "(MIT or GPL-3.0+)"
+        ],
+        "authors": [
+            {
+                "name": "Miled",
+                "email": "hybridauth@gmail.com"
+            }
+        ],
+        "description": "Open source social sign on PHP library.",
+        "homepage": "http://hybridauth.sourceforge.net",
+        "keywords": [
+            "OpenId",
+            "facebook",
+            "google",
+            "hybridauth",
+            "login",
+            "oauth",
+            "social",
+            "twitter",
+            "yahoo"
+        ]
+    },
+    {
+        "name": "socalnick/scn-social-auth",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/SocalNick/ScnSocialAuth.git",
+            "reference": "1b7d137ea7e3f5059577f40f364d82b0b50c6d46"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/SocalNick/ScnSocialAuth/zipball/1b7d137ea7e3f5059577f40f364d82b0b50c6d46",
+            "reference": "1b7d137ea7e3f5059577f40f364d82b0b50c6d46",
+            "shasum": ""
+        },
+        "require": {
+            "hybridauth/hybridauth": "dev-master",
+            "php": ">=5.3.3",
+            "zendframework/zendframework": "2.*",
+            "zf-commons/zfc-base": "0.1.*",
+            "zf-commons/zfc-user": "0.1.*"
+        },
+        "require-dev": {
+            "mockery/mockery": ">=0.7.2"
+        },
+        "time": "2013-12-02 19:55:08",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "ScnSocialAuth": "src/",
+                "ScnSocialAuthTest": "test/"
+            },
+            "classmap": [
+                "./"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "authors": [
+            {
+                "name": "Nicholas Calugar",
+                "email": "njcalugar@gmail.com",
+                "homepage": "http://socalnick.github.com/",
+                "role": "Developer"
+            }
+        ],
+        "description": "Uses the HybridAuth PHP library to Enable authentication via Google, Facebook, Twitter, Yahoo!, etc for the ZfcUser ZF2 module.",
+        "homepage": "https://github.com/SocalNick/ScnSocialAuth",
+        "keywords": [
+            "zf2"
+        ]
+    },
+    {
+        "name": "bjyoungblood/bjy-authorize",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/bjyoungblood/BjyAuthorize.git",
+            "reference": "e1c5a5cda965d42359c3ee14fc1221f5170dc373"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/bjyoungblood/BjyAuthorize/zipball/e1c5a5cda965d42359c3ee14fc1221f5170dc373",
+            "reference": "e1c5a5cda965d42359c3ee14fc1221f5170dc373",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3",
+            "zendframework/zend-cache": "~2.2",
+            "zendframework/zend-eventmanager": "~2.2",
+            "zendframework/zend-http": "~2.2",
+            "zendframework/zend-mvc": "~2.2",
+            "zendframework/zend-permissions-acl": "~2.2",
+            "zendframework/zend-servicemanager": "~2.2",
+            "zendframework/zend-view": "~2.2"
+        },
+        "require-dev": {
+            "doctrine/common": ">=2.3,<2.5-dev",
+            "phpunit/phpunit": "~3.7",
+            "satooshi/php-coveralls": "~0.6",
+            "squizlabs/php_codesniffer": "1.4.*",
+            "zendframework/zend-developer-tools": "0.*",
+            "zf-commons/zfc-user": "0.*"
+        },
+        "time": "2013-10-29 17:47:34",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.5-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "BjyAuthorize\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Marco Pivetta",
+                "email": "ocramius@gmail.com",
+                "homepage": "http://ocramius.github.com/",
+                "role": "Developer"
+            },
+            {
+                "name": "Ben Youngblood",
+                "email": "bx.youngblood@gmail.com",
+                "homepage": "http://bjyoungblood.com/",
+                "role": "Developer"
+            }
+        ],
+        "description": "Zend\\Acl based firewall system for ZF2 dispatch protection",
+        "homepage": "https://github.com/bjyoungblood/BjyAuthorize",
+        "keywords": [
+            "acl",
+            "zf2",
+            "zfc-user"
+        ]
+    },
+    {
+        "name": "zendframework/zendoauth",
+        "version": "2.0.2",
+        "version_normalized": "2.0.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/zendframework/ZendOAuth.git",
+            "reference": "0d068773448dd224583aa07b0a16349613bd9b8d"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/zendframework/ZendOAuth/zipball/0d068773448dd224583aa07b0a16349613bd9b8d",
+            "reference": "0d068773448dd224583aa07b0a16349613bd9b8d",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3",
+            "zendframework/zend-config": ">=2.0.0",
+            "zendframework/zend-crypt": ">=2.0.0",
+            "zendframework/zend-http": ">=2.0.0",
+            "zendframework/zend-i18n": ">=2.0.0",
+            "zendframework/zend-loader": ">=2.0.0",
+            "zendframework/zend-math": ">=2.0.0",
+            "zendframework/zend-stdlib": ">=2.0.0",
+            "zendframework/zend-uri": ">=2.0.0"
+        },
+        "time": "2013-06-10 21:09:59",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.0.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "ZendOAuth": "library/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "homepage": "http://packages.zendframework.com/",
+        "keywords": [
+            "oauth",
+            "zf2"
+        ]
+    },
+    {
+        "name": "zf-commons/zfc-admin",
+        "version": "v0.1.1",
+        "version_normalized": "0.1.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/ZF-Commons/ZfcAdmin.git",
+            "reference": "85b4d647ba4d080f66d79b0a9deb986db093117c"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/ZF-Commons/ZfcAdmin/zipball/85b4d647ba4d080f66d79b0a9deb986db093117c",
+            "reference": "85b4d647ba4d080f66d79b0a9deb986db093117c",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3",
+            "zendframework/zendframework": "2.*"
+        },
+        "suggest": {
+            "bjyoungblood/bjy-authorize": "Access control to protect ZfcAdmin against unauthorized users"
+        },
+        "time": "2013-04-23 09:31:59",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "ZfcAdmin": "src/"
+            },
+            "classmap": [
+                "./Module.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Jurian Sluiman ",
+                "email": "jurian@juriansluiman.nl",
+                "homepage": "http://juriansluiman.nl/en/"
+            },
+            {
+                "name": "Martin Shwalbe",
+                "email": "martin.shwalbe@gmail.com",
+                "homepage": "http://hounddog.github.com"
+            }
+        ],
+        "description": "A generic Admin module for ZF2.",
+        "homepage": "https://github.com/juriansluiman/ZfcAdmin",
+        "keywords": [
+            "zf2"
+        ]
+    },
+    {
+        "name": "danielss89/zfc-user-admin",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Danielss89/ZfcUserAdmin.git",
+            "reference": "a92eb8fc0ab7c87a3acad51c9c0bba404a0cf088"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/Danielss89/ZfcUserAdmin/zipball/a92eb8fc0ab7c87a3acad51c9c0bba404a0cf088",
+            "reference": "a92eb8fc0ab7c87a3acad51c9c0bba404a0cf088",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3",
+            "zf-commons/zfc-admin": ">=0.1.1",
+            "zf-commons/zfc-user": ">=0.1.1"
+        },
+        "time": "2013-11-29 16:01:07",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "ZfcUserAdmin": "src/"
+            },
+            "classmap": [
+                "./Module.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "authors": [
+            {
+                "name": "Daniel Strøm",
+                "email": "daniel@eye4web.dk"
+            }
+        ],
+        "description": "An administration interface for ZfcUser.",
+        "homepage": "https://github.com/Danielss89/ZfcUserAdmin.git",
+        "keywords": [
             "zf2"
         ]
     }

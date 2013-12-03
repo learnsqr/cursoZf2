@@ -5,6 +5,7 @@
 $modules = array(
 		'Application',
         'ZfcBase',
+        'ZfcAdmin',
         'ZfcUser',
         'ScnSocialAuth',
         'BjyAuthorize',        

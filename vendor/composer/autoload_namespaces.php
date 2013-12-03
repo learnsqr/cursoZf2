@@ -11,6 +11,11 @@ return array(
     'ZfcBase' => array($vendorDir . '/zf-commons/zfc-base/src'),
     'ZfcAdmin' => array($vendorDir . '/zf-commons/zfc-admin/src'),
     'Zend\\' => array($vendorDir . '/zendframework/zendframework/library'),
+    'ZendOAuth' => array($vendorDir . '/zendframework/zendoauth/library'),
     'ZendDeveloperTools' => array($vendorDir . '/zendframework/zend-developer-tools/src'),
+    'ScnSocialAuthTest' => array($vendorDir . '/socalnick/scn-social-auth/test'),
+    'ScnSocialAuth' => array($vendorDir . '/socalnick/scn-social-auth/src'),
+    'Hybrid' => array($vendorDir . '/hybridauth/hybridauth/hybridauth'),
     'BjyProfiler' => array($vendorDir . '/bjyoungblood/bjy-profiler/src'),
+    'BjyAuthorize\\' => array($vendorDir . '/bjyoungblood/bjy-authorize/src'),
 );
