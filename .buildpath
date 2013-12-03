@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<buildpath>
+	<buildpathentry kind="con" path="org.eclipse.php.core.LANGUAGE"/>
+	<buildpathentry kind="src" path=""/>
+	<buildpathentry kind="con" path="org.eclipse.dltk.USER_LIBRARY/org.eclipse.php.core.PHPNature#PHPUnit"/>
+	<buildpathentry kind="con" path="org.eclipse.dltk.USER_LIBRARY/org.eclipse.php.core.PHPNature#Zend Framework 2"/>
+</buildpath>
