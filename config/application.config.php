@@ -8,6 +8,7 @@ $modules = array(
         'ZfcUser',
         'ScnSocialAuth',
         'BjyAuthorize',        
+        'Auth',                
 );
 if ($env == 'development') {    
 	// Modules Debug
