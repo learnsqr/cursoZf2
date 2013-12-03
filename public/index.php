@@ -19,6 +19,7 @@ if (php_sapi_name() === 'cli-server' &&
     return false;
 }
 
+
 // Setup autoloading
 require 'init_autoloader.php';
 

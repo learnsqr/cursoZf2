@@ -61,7 +61,11 @@ msgid ""
 "%sdev blog%s, %sissue tracker%s, and much more. This is a great resource for "
 "staying up to date with the latest developments!"
 msgstr ""
+<<<<<<< HEAD
+"Zend Framework 2 активно развивается. Если вы заинтерисованны в его "
+=======
 "Zend Framework 2 активно развивается. Если вы заинтересованы в его "
+>>>>>>> b0389165e9c12442a2aad0f0f0bfb9b834043af4
 "развитии, для вас есть специальный портал ZF2 на официальном сайте Zend "
 "Framework который дает ссылки на ZF2 %swiki%s, %sdev blog%s, %sissue tracker"
 "%s, и многое другое. Это отличный ресурс для того чтобы быть в курсе "
@@ -83,9 +87,15 @@ msgid ""
 "%s. The site is currently live and currently contains a list of some of the "
 "modules already available for ZF2."
 msgstr ""
+<<<<<<< HEAD
+"Сообщество работает на созданием сайта, который служит хранилищем и галерей "
+"для ZF2 модулей. Проект доступен %sна GitHub%s. Сайт в настоящее время "
+"активен и содержит список модулей уже достпных для ZF2."
+=======
 "Сообщество работает над созданием сайта, который служит хранилищем и галереей "
 "для ZF2 модулей. Проект доступен %sна GitHub%s. Сайт в настоящее время "
 "активен и содержит список модулей уже доступных для ZF2."
+>>>>>>> b0389165e9c12442a2aad0f0f0bfb9b834043af4
 
 #: ../view/application/index/index.phtml:18
 msgid "Explore ZF2 Modules"
