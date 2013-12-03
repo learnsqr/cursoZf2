@@ -52,8 +52,8 @@ class AlbumRestController extends AbstractRestfulController
         $album = new Album();
         $form->setInputFilter($album->getInputFilter());
         $form->setData($data);
-        \Zend\Debug\Debug::dump($form->isValid());
-        die;
+//         \Zend\Debug\Debug::dump($data);
+//         die;
         if ($form->isValid()) {
             $album->exchangeArray($form->getData());
             $id = $this->getAlbumTable()->saveAlbum($album);
