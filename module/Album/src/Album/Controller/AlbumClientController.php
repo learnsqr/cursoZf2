@@ -31,7 +31,7 @@ class AlbumClientController extends AbstractActionController
         $albums = Json::decode($this->getResponse()->getContent(), Json::TYPE_OBJECT);
         
         $model = new ViewModel(array("albums" => $albums->albums));
-        $model->setTemplate("album/album/index.phtml");
+//         $model->setTemplate("album/album/index.phtml");
         return $model;
     }
     
@@ -55,7 +55,7 @@ class AlbumClientController extends AbstractActionController
         }
         
         $model = new ViewModel(array('form' => $form));
-        $model->setTemplate("album/album/add.phtml");
+//         $model->setTemplate("album/album/add.phtml");
         return $model;
     }
     
@@ -86,7 +86,7 @@ class AlbumClientController extends AbstractActionController
                     'id'    => $id,
                     'album' => $album
         ));
-        $model->setTemplate("album/album/delete.phtml");
+//         $model->setTemplate("album/album/delete.phtml");
         return $model;
     }
     
@@ -120,10 +120,10 @@ class AlbumClientController extends AbstractActionController
         }
         
         $model = new ViewModel(array(
-        		'id' => $id,
+        	'id' => $id,
     		'form' => $form,
         ));
-        $model->setTemplate("album/album/edit.phtml");
+//         $model->setTemplate("album/album/edit.phtml");
         return $model;
     }
     
