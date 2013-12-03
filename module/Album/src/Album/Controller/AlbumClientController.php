@@ -41,17 +41,17 @@ class AlbumClientController extends AbstractActionController
         
         $request = $this->getRequest();
         if ($request->isPost()) {
-        	$album = new Album();
-        	$form->setInputFilter($album->getInputFilter());
-        	$form->setData($request->getPost());
+                $album = new Album();
+                $form->setInputFilter($album->getInputFilter());
+                $form->setData($request->getPost());
         
-        	if ($form->isValid()) {
-        		$data = $form->getData();
-        		$resp = $this->getRestResponse("http://zf2.local/album-rest", "POST", $data);
+                if ($form->isValid()) {
+                        $data = $form->getData();
+                        $resp = $this->getRestResponse("http://zf2.local/album-rest", "POST", $data);
         
-        		// Redirect to list of albums
-        		return $this->redirect()->toRoute('album-client');
-        	}
+                        // Redirect to list of albums
+                        return $this->redirect()->toRoute('albumclient');
+                }
         }
         
         $model = new ViewModel(array('form' => $form));
@@ -62,20 +62,20 @@ class AlbumClientController extends AbstractActionController
     public function deleteAction() {
         $id = (int) $this->params()->fromRoute('id', 0);
         if (!$id) {
-        	return $this->redirect()->toRoute('album');
+                return $this->redirect()->toRoute('album');
         }
         
         $request = $this->getRequest();
         if ($request->isPost()) {
-        	$del = $request->getPost('del', 'No');
+                $del = $request->getPost('del', 'No');
         
-        	if ($del == 'Yes') {
-        		$id = (int) $request->getPost('id');
-        		$resp = $this->getRestResponse(sprintf("http://zf2.local/album-rest/%s", $id), "DELETE");
-        	}
+                if ($del == 'Yes') {
+                        $id = (int) $request->getPost('id');
+                        $resp = $this->getRestResponse(sprintf("http://zf2.local/album-rest/%s", $id), "DELETE");
+                }
         
-        	// Redirect to list of albums
-        	return $this->redirect()->toRoute('album-client');
+                // Redirect to list of albums
+                return $this->redirect()->toRoute('albumclient');
         }
         
         $resp = $this->getRestResponse(sprintf("http://zf2.local/album-rest/%s", $id));
@@ -83,45 +83,15 @@ class AlbumClientController extends AbstractActionController
         $album = new Album();
         $album->exchangeArray(get_object_vars($respData->album));
         $model = new ViewModel(array(
-    		'id'    => $id,
-    		'album' => $album
+                    'id'    => $id,
+                    'album' => $album
         ));
         $model->setTemplate("album/album/delete.phtml");
         return $model;
     }
     
     public function editAction() {
-        $id = (int) $this->params()->fromRoute('id', 0);
-        if (!$id) {
-        	return $this->redirect()->toRoute('album-client', array(
-    			'action' => 'add'
-        	));
-        }
-        $album = $this->getAlbumTable()->getAlbum($id);
         
-        $form  = new AlbumForm();
-        $form->bind($album);
-        $form->get('submit')->setAttribute('value', 'Edit');
-        
-        $request = $this->getRequest();
-        if ($request->isPost()) {
-        	$form->setInputFilter($album->getInputFilter());
-        	$form->setData($request->getPost());
-        
-        	if ($form->isValid()) {
-        		$this->getAlbumTable()->saveAlbum($form->getData());
-        
-        		// Redirect to list of albums
-        		return $this->redirect()->toRoute('album-client');
-        	}
-        }
-        
-        $model = new ViewModel(array(
-    		'id' => $id,
-    		'form' => $form,
-        ));
-        $model->setTemplate("album/album/edit.phtml");
-        return $model;
     }
     
     public function getRestResponse($uri, $method = "GET", $params = array()) {
