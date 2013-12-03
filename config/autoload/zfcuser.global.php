@@ -22,7 +22,7 @@ $settings = array(
      * The entity class should implement ZfcUser\Entity\UserInterface
      */
 
-    'user_entity_class' => 'ZfcUser\Entity\User',
+    //'user_entity_class' => 'ZfcUser\Entity\User',
 
 
     /**
@@ -33,7 +33,7 @@ $settings = array(
      * Accepted values: boolean true or false
      */
 
-    'enable_registration' => true,
+    //'enable_registration' => true,
 
 
     /**
@@ -45,7 +45,7 @@ $settings = array(
      * Accepted values: boolean true or false
      */
 
-    'enable_username' => false,
+    //'enable_username' => false,
 
 
     /**     
@@ -67,7 +67,7 @@ $settings = array(
      * Accepted values: boolean true or false
      */
 
-    'enable_display_name' => true,
+    //'enable_display_name' => true,
 
 
     /**
@@ -80,7 +80,7 @@ $settings = array(
      * Accepted values: array containing one or more of: email, username
      */
 
-    'auth_identity_fields' => array( 'email' ),
+    //'auth_identity_fields' => array( 'email' ),
 
 
     /**
@@ -92,7 +92,7 @@ $settings = array(
      * Accepted values: positive int value
      */
 
-    'login_form_timeout' => 300,
+    //'login_form_timeout' => 300,
 
 
     /**
@@ -104,7 +104,7 @@ $settings = array(
      * Accepted values: positive int value
      */
 
-    'user_form_timeout' => 300,
+    //'user_form_timeout' => 300,
 
 
     /**
@@ -116,7 +116,7 @@ $settings = array(
      * Accepted values: boolean true or false
      */
 
-    'login_after_registration' => true,
+    //'login_after_registration' => true,
 
 
     /**
@@ -126,7 +126,7 @@ $settings = array(
      * Default value is false.
      */
 
-    'use_registration_form_captcha' => false,
+    //'use_registration_form_captcha' => false,
 
 
     /**

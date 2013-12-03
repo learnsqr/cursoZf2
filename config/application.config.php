@@ -8,7 +8,8 @@ $modules = array(
         'ZfcUser',
         'ScnSocialAuth',
         'BjyAuthorize',        
-        'Auth',                
+        'Auth',
+        'ZfcUserAdmin',
 );
 if ($env == 'development') {    
 	// Modules Debug
@@ -22,7 +23,9 @@ if ($env == 'development') {
 return array(
     // This should be an array of module namespaces used in the application.
 
+
     'modules' => $modules,
+
 
     // These are various options for the listeners attached to the ModuleManager
     'module_listener_options' => array(

@@ -17,6 +17,6 @@
         "socalnick/scn-social-auth": "dev-master",
         "bjyoungblood/bjy-authorize": "dev-master",
         "zendframework/zendoauth" : "=2.0.2"        
-
+        "danielss89/zfc-user-admin" : "dev-master"
     }
 }
