@@ -16,5 +16,6 @@
         "hybridauth/hybridauth": "dev-master",
         "socalnick/scn-social-auth": "dev-master",
         "bjyoungblood/bjy-authorize": "dev-master"
+
     }
 }
