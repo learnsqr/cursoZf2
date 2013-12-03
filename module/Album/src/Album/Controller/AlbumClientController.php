@@ -91,7 +91,40 @@ class AlbumClientController extends AbstractActionController
     }
     
     public function editAction() {
+        $id = (int) $this->params()->fromRoute('id', 0);
+        if (!$id) {
+        	return $this->redirect()->toRoute('album', array(
+    			'action' => 'add'
+        	));
+        }
+        $resp = $this->getRestResponse(sprintf("http://zf2.local/album-rest/%s", $id));
+        $respData = Json::decode($resp->getBody());
+        $album = new Album();
+        $album->exchangeArray(get_object_vars($respData->album));
         
+        $form  = new AlbumForm();
+        $form->bind($album);
+        $form->get('submit')->setAttribute('value', 'Edit');
+        
+        $request = $this->getRequest();
+        if ($request->isPost()) {
+        	$form->setInputFilter($album->getInputFilter());
+        	$form->setData($request->getPost());
+        
+        	if ($form->isValid()) {
+        		$resp = $this->getRestResponse(sprintf("http://zf2.local/album-rest/%s", $id), "POST", get_object_vars($form->getData()));
+        		
+        		// Redirect to list of albums
+        		return $this->redirect()->toRoute('album');
+        	}
+        }
+        
+        $model = new ViewModel(array(
+        		'id' => $id,
+    		'form' => $form,
+        ));
+        $model->setTemplate("album/album/edit.phtml");
+        return $model;
     }
     
     public function getRestResponse($uri, $method = "GET", $params = array()) {
