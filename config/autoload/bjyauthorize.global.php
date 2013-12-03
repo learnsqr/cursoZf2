@@ -95,7 +95,8 @@ return array(
             'BjyAuthorize\Guard\Controller' => array(
                 array('controller' => 'index', 'action' => 'index', 'roles' => array('guest','user')),
                 array('controller' => 'index', 'action' => 'stuff', 'roles' => array('user')),
-                array('controller' => 'Album\Controller\Album', 'action' => 'index', 'roles' => array('user')),
+                array('controller' => 'Album\Controller\Album', 'action' => 'index', 'roles' => array('guest')),
+                array('controller' => 'ZfcUser\Controller\User', 'action' => 'index', 'roles' => array('guest')),
                 // You can also specify an array of actions or an array of controllers (or both)
                 // allow "guest" and "admin" to access actions "list" and "manage" on these "index",
                 // "static" and "console" controllers
