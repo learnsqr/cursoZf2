@@ -91,7 +91,37 @@ class AlbumClientController extends AbstractActionController
     }
     
     public function editAction() {
+        $id = (int) $this->params()->fromRoute('id', 0);
+        if (!$id) {
+        	return $this->redirect()->toRoute('album-client', array(
+    			'action' => 'add'
+        	));
+        }
+        $album = $this->getAlbumTable()->getAlbum($id);
         
+        $form  = new AlbumForm();
+        $form->bind($album);
+        $form->get('submit')->setAttribute('value', 'Edit');
+        
+        $request = $this->getRequest();
+        if ($request->isPost()) {
+        	$form->setInputFilter($album->getInputFilter());
+        	$form->setData($request->getPost());
+        
+        	if ($form->isValid()) {
+        		$this->getAlbumTable()->saveAlbum($form->getData());
+        
+        		// Redirect to list of albums
+        		return $this->redirect()->toRoute('album-client');
+        	}
+        }
+        
+        $model = new ViewModel(array(
+    		'id' => $id,
+    		'form' => $form,
+        ));
+        $model->setTemplate("album/album/edit.phtml");
+        return $model;
     }
     
     public function getRestResponse($uri, $method = "GET", $params = array()) {
