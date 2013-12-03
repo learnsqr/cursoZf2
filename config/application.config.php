@@ -1,11 +1,26 @@
 <?php
+
+($env = getenv('APPLICATION_ENV')) ?:($env= 'production');
+
+$modules = array(
+		'Application',
+        'ZfcBase',
+        'ZfcUser',
+        'ScnSocialAuth',
+        'BjyAuthorize',        
+);
+if ($env == 'development') {    
+	// Modules Debug
+        $modules[] = 'BjyProfiler';
+        $modules[] = 'ZendDeveloperTools';	
+	// Skeleton
+	$modules[] = 'Album';
+		
+}
+
 return array(
     // This should be an array of module namespaces used in the application.
-    'modules' => array(
-        'Application',
-        'Album',
-    ),
-
+    'modules' => $modules,
     // These are various options for the listeners attached to the ModuleManager
     'module_listener_options' => array(
         // This should be an array of paths in which modules reside.

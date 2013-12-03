@@ -9,6 +9,12 @@
     "homepage": "http://framework.zend.com/",
     "require": {
         "php": ">=5.3.3",
-        "zendframework/zendframework": "2.2.*"
+        "zendframework/zendframework": "2.2.*",
+        "zf-commons/zfc-user": "dev-master",
+        "bjyoungblood/bjy-profiler": "dev-master",
+        "zendframework/zend-developer-tools": "dev-master",
+        "hybridauth/hybridauth": "dev-master",
+        "socalnick/scn-social-auth": "dev-master",
+        "bjyoungblood/bjy-authorize": "dev-master"
     }
 }

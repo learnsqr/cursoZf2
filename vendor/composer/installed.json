@@ -1,24 +1,23 @@
 [
     {
         "name": "zendframework/zendframework",
-        "version": "2.0.5",
-        "version_normalized": "2.0.5.0",
+        "version": "2.2.5",
+        "version_normalized": "2.2.5.0",
         "source": {
             "type": "git",
-            "url": "git://github.com/zendframework/zf2.git",
-            "reference": "release-2.0.5"
+            "url": "https://github.com/zendframework/zf2.git",
+            "reference": "4a7cf6a4cf791244e14aa0ca49d1f06916b63202"
         },
         "dist": {
             "type": "zip",
-            "url": "https://github.com/zendframework/zf2/archive/release-2.0.5.zip",
-            "reference": "release-2.0.5",
+            "url": "https://api.github.com/repos/zendframework/zf2/zipball/4a7cf6a4cf791244e14aa0ca49d1f06916b63202",
+            "reference": "4a7cf6a4cf791244e14aa0ca49d1f06916b63202",
             "shasum": ""
         },
         "require": {
             "php": ">=5.3.3"
         },
         "replace": {
-            "zendframework/zend-acl": "self.version",
             "zendframework/zend-authentication": "self.version",
             "zendframework/zend-barcode": "self.version",
             "zendframework/zend-cache": "self.version",
@@ -28,6 +27,7 @@
             "zendframework/zend-console": "self.version",
             "zendframework/zend-crypt": "self.version",
             "zendframework/zend-db": "self.version",
+            "zendframework/zend-debug": "self.version",
             "zendframework/zend-di": "self.version",
             "zendframework/zend-dom": "self.version",
             "zendframework/zend-escaper": "self.version",
@@ -44,7 +44,6 @@
             "zendframework/zend-loader": "self.version",
             "zendframework/zend-log": "self.version",
             "zendframework/zend-mail": "self.version",
-            "zendframework/zend-markup": "self.version",
             "zendframework/zend-math": "self.version",
             "zendframework/zend-memory": "self.version",
             "zendframework/zend-mime": "self.version",
@@ -52,7 +51,10 @@
             "zendframework/zend-mvc": "self.version",
             "zendframework/zend-navigation": "self.version",
             "zendframework/zend-paginator": "self.version",
+            "zendframework/zend-permissions-acl": "self.version",
+            "zendframework/zend-permissions-rbac": "self.version",
             "zendframework/zend-progressbar": "self.version",
+            "zendframework/zend-resources": "self.version",
             "zendframework/zend-serializer": "self.version",
             "zendframework/zend-server": "self.version",
             "zendframework/zend-servicemanager": "self.version",
@@ -60,39 +62,467 @@
             "zendframework/zend-soap": "self.version",
             "zendframework/zend-stdlib": "self.version",
             "zendframework/zend-tag": "self.version",
+            "zendframework/zend-test": "self.version",
             "zendframework/zend-text": "self.version",
             "zendframework/zend-uri": "self.version",
             "zendframework/zend-validator": "self.version",
+            "zendframework/zend-version": "self.version",
             "zendframework/zend-view": "self.version",
             "zendframework/zend-xmlrpc": "self.version"
         },
         "require-dev": {
-            "doctrine/common": ">=2.1",
+            "doctrine/annotations": ">=1.0",
+            "fabpot/php-cs-fixer": "*@dev",
+            "ircmaxell/random-lib": "dev-master",
+            "ircmaxell/security-lib": "dev-master",
+            "ocramius/proxy-manager": "0.4.*",
             "phpunit/phpunit": "3.7.*"
         },
         "suggest": {
-            "doctrine/common": "Doctrine\\Common >=2.1 for annotation features",
-            "ext-intl": "ext/intl for i18n features",
-            "pecl-weakref": "Implementation of weak references for Zend\\Stdlib\\CallbackHandler",
+            "doctrine/annotations": "Doctrine Annotations >=1.0 for annotation features",
+            "ext-intl": "ext/intl for i18n features (included in default builds of PHP)",
+            "ircmaxell/random-lib": "Fallback random byte generator for Zend\\Math\\Rand if OpenSSL/Mcrypt extensions are unavailable",
+            "ocramius/proxy-manager": "ProxyManager to handle lazy initialization of services",
             "zendframework/zendpdf": "ZendPdf for creating PDF representations of barcodes",
             "zendframework/zendservice-recaptcha": "ZendService\\ReCaptcha for rendering ReCaptchas in Zend\\Captcha and/or Zend\\Form"
         },
+        "time": "2013-10-31 15:48:16",
         "bin": [
-            "bin/classmap_generator.php"
+            "bin/classmap_generator.php",
+            "bin/pluginmap_generator.php",
+            "bin/templatemap_generator.php"
         ],
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-master": "2.0-dev",
-                "dev-develop": "2.1-dev"
+                "dev-master": "2.2-dev",
+                "dev-develop": "2.3-dev"
             }
         },
         "installation-source": "dist",
         "autoload": {
             "psr-0": {
-                "Zend\\": "library/",
-                "ZendTest\\": "tests/"
+                "Zend\\": "library/"
             }
-        }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "description": "Zend Framework 2",
+        "homepage": "http://framework.zend.com/",
+        "keywords": [
+            "framework",
+            "zf2"
+        ]
+    },
+    {
+        "name": "zendframework/zend-developer-tools",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/zendframework/ZendDeveloperTools.git",
+            "reference": "8c38e67884268c94426cc4c8647d064ef13d100a"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/zendframework/ZendDeveloperTools/zipball/8c38e67884268c94426cc4c8647d064ef13d100a",
+            "reference": "8c38e67884268c94426cc4c8647d064ef13d100a",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3",
+            "zendframework/zend-debug": "2.*",
+            "zendframework/zend-eventmanager": "2.*",
+            "zendframework/zend-mvc": "2.*",
+            "zendframework/zend-servicemanager": "2.*",
+            "zendframework/zend-stdlib": "2.*",
+            "zendframework/zend-version": "2.*"
+        },
+        "suggest": {
+            "bjyoungblood/bjy-profiler": "Version: dev-master, allows the usage of the (Zend) Db collector.",
+            "ocramius/ocra-service-manager": "OcraServiceManager can help you track dependencies within your application."
+        },
+        "time": "2013-11-13 19:43:45",
+        "type": "zf-module",
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "ZendDeveloperTools": "src/"
+            },
+            "classmap": [
+                "./Module.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Evan Coury",
+                "email": "me@evancoury.com",
+                "homepage": "http://blog.evan.pro/"
+            },
+            {
+                "name": "Eric Boh",
+                "email": "cossish@gmail.com"
+            }
+        ],
+        "description": "Module for developer and debug tools for working with the ZF2 MVC layer.",
+        "homepage": "https://github.com/zendframework/ZendDeveloperTools",
+        "keywords": [
+            "debug",
+            "developer",
+            "module",
+            "zf2"
+        ]
+    },
+    {
+        "name": "bjyoungblood/bjy-profiler",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/bjyoungblood/BjyProfiler.git",
+            "reference": "1ad040a59791bf28eafe4d27d485877d925db43e"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/bjyoungblood/BjyProfiler/zipball/1ad040a59791bf28eafe4d27d485877d925db43e",
+            "reference": "1ad040a59791bf28eafe4d27d485877d925db43e",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3",
+            "zendframework/zendframework": ">=2.1.0"
+        },
+        "time": "2013-07-25 02:55:43",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "BjyProfiler": "src/"
+            },
+            "classmap": [
+                "./Module.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "authors": [
+            {
+                "name": "Ben Youngblood",
+                "email": "bx.youngblood@gmail.com",
+                "homepage": "http://bjyoungblood.com/",
+                "role": "Developer"
+            }
+        ],
+        "description": "Database profiler for Zend\\Db (also plugin for ZendDeveloperTools)",
+        "homepage": "https://github.com/bjyoungblood/BjyProfiler",
+        "keywords": [
+            "db",
+            "profiler",
+            "zdt",
+            "zf2"
+        ]
+    },
+    {
+        "name": "zf-commons/zfc-base",
+        "version": "v0.1.2",
+        "version_normalized": "0.1.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/ZF-Commons/ZfcBase.git",
+            "reference": "fc68a49b58ba68584a9a4c44a1ca9df12b30d1bf"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/ZF-Commons/ZfcBase/zipball/fc68a49b58ba68584a9a4c44a1ca9df12b30d1bf",
+            "reference": "fc68a49b58ba68584a9a4c44a1ca9df12b30d1bf",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3",
+            "zendframework/zend-db": "~2.1",
+            "zendframework/zend-eventmanager": "~2.1",
+            "zendframework/zend-loader": "~2.1",
+            "zendframework/zend-modulemanager": "~2.1",
+            "zendframework/zend-mvc": "~2.1",
+            "zendframework/zend-servicemanager": "~2.1",
+            "zendframework/zend-stdlib": "~2.1"
+        },
+        "time": "2013-05-02 12:33:49",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "ZfcBase": "src/"
+            },
+            "classmap": [
+                "./Module.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "authors": [
+            {
+                "name": "Kyle Spraggs",
+                "email": "theman@spiffyjr.me",
+                "homepage": "http://www.spiffyjr.me/"
+            },
+            {
+                "name": "Evan Coury",
+                "email": "me@evancoury.com",
+                "homepage": "http://blog.evan.pro/"
+            }
+        ],
+        "description": "A set of genetic (abstract) classes which are commonly used across multiple modules.",
+        "homepage": "https://github.com/ZF-Commons/ZfcBase",
+        "keywords": [
+            "zf2"
+        ]
+    },
+    {
+        "name": "zf-commons/zfc-user",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/ZF-Commons/ZfcUser.git",
+            "reference": "397ffe436a1aaf88d7f67b3d703773726a043ee4"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/ZF-Commons/ZfcUser/zipball/397ffe436a1aaf88d7f67b3d703773726a043ee4",
+            "reference": "397ffe436a1aaf88d7f67b3d703773726a043ee4",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3",
+            "zendframework/zend-authentication": "~2.1",
+            "zendframework/zend-crypt": "~2.1",
+            "zendframework/zend-form": "~2.1",
+            "zendframework/zend-inputfilter": "~2.1",
+            "zendframework/zend-loader": "~2.1",
+            "zendframework/zend-modulemanager": "~2.1",
+            "zendframework/zend-mvc": "~2.1",
+            "zendframework/zend-servicemanager": "~2.1",
+            "zendframework/zend-stdlib": "~2.1",
+            "zendframework/zend-validator": "~2.1",
+            "zendframework/zend-view": "~2.1",
+            "zf-commons/zfc-base": "0.*"
+        },
+        "suggest": {
+            "zendframework/zend-session": "To use the default authentication adapter."
+        },
+        "time": "2013-11-22 07:11:38",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "0.1.x-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "ZfcUser": "src/"
+            },
+            "classmap": [
+                "./Module.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "authors": [
+            {
+                "name": "Kyle Spraggs",
+                "email": "theman@spiffyjr.me",
+                "homepage": "http://www.spiffyjr.me/"
+            },
+            {
+                "name": "Evan Coury",
+                "email": "me@evancoury.com",
+                "homepage": "http://blog.evan.pro/"
+            }
+        ],
+        "description": "A generic user registration and authentication module for ZF2. Supports Zend\\Db and Doctrine2.",
+        "homepage": "https://github.com/ZF-Commons/ZfcUser",
+        "keywords": [
+            "zf2"
+        ]
+    },
+    {
+        "name": "hybridauth/hybridauth",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/hybridauth/hybridauth.git",
+            "reference": "6d89473b379fc7a904e69ee63f548af3308bd4d9"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/hybridauth/hybridauth/zipball/6d89473b379fc7a904e69ee63f548af3308bd4d9",
+            "reference": "6d89473b379fc7a904e69ee63f548af3308bd4d9",
+            "shasum": ""
+        },
+        "require": {
+            "ext-curl": "*",
+            "php": ">=5.2.0"
+        },
+        "time": "2013-02-21 06:45:16",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "Hybrid": "hybridauth/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "(MIT or GPL-3.0+)"
+        ],
+        "authors": [
+            {
+                "name": "Miled",
+                "email": "hybridauth@gmail.com"
+            }
+        ],
+        "description": "Open source social sign on PHP library.",
+        "homepage": "http://hybridauth.sourceforge.net",
+        "keywords": [
+            "OpenId",
+            "facebook",
+            "google",
+            "hybridauth",
+            "login",
+            "oauth",
+            "social",
+            "twitter",
+            "yahoo"
+        ]
+    },
+    {
+        "name": "socalnick/scn-social-auth",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/SocalNick/ScnSocialAuth.git",
+            "reference": "1b7d137ea7e3f5059577f40f364d82b0b50c6d46"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/SocalNick/ScnSocialAuth/zipball/1b7d137ea7e3f5059577f40f364d82b0b50c6d46",
+            "reference": "1b7d137ea7e3f5059577f40f364d82b0b50c6d46",
+            "shasum": ""
+        },
+        "require": {
+            "hybridauth/hybridauth": "dev-master",
+            "php": ">=5.3.3",
+            "zendframework/zendframework": "2.*",
+            "zf-commons/zfc-base": "0.1.*",
+            "zf-commons/zfc-user": "0.1.*"
+        },
+        "require-dev": {
+            "mockery/mockery": ">=0.7.2"
+        },
+        "time": "2013-12-02 19:55:08",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "ScnSocialAuth": "src/",
+                "ScnSocialAuthTest": "test/"
+            },
+            "classmap": [
+                "./"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "authors": [
+            {
+                "name": "Nicholas Calugar",
+                "email": "njcalugar@gmail.com",
+                "homepage": "http://socalnick.github.com/",
+                "role": "Developer"
+            }
+        ],
+        "description": "Uses the HybridAuth PHP library to Enable authentication via Google, Facebook, Twitter, Yahoo!, etc for the ZfcUser ZF2 module.",
+        "homepage": "https://github.com/SocalNick/ScnSocialAuth",
+        "keywords": [
+            "zf2"
+        ]
+    },
+    {
+        "name": "bjyoungblood/bjy-authorize",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/bjyoungblood/BjyAuthorize.git",
+            "reference": "e1c5a5cda965d42359c3ee14fc1221f5170dc373"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/bjyoungblood/BjyAuthorize/zipball/e1c5a5cda965d42359c3ee14fc1221f5170dc373",
+            "reference": "e1c5a5cda965d42359c3ee14fc1221f5170dc373",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3",
+            "zendframework/zend-cache": "~2.2",
+            "zendframework/zend-eventmanager": "~2.2",
+            "zendframework/zend-http": "~2.2",
+            "zendframework/zend-mvc": "~2.2",
+            "zendframework/zend-permissions-acl": "~2.2",
+            "zendframework/zend-servicemanager": "~2.2",
+            "zendframework/zend-view": "~2.2"
+        },
+        "require-dev": {
+            "doctrine/common": ">=2.3,<2.5-dev",
+            "phpunit/phpunit": "~3.7",
+            "satooshi/php-coveralls": "~0.6",
+            "squizlabs/php_codesniffer": "1.4.*",
+            "zendframework/zend-developer-tools": "0.*",
+            "zf-commons/zfc-user": "0.*"
+        },
+        "time": "2013-10-29 17:47:34",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.5-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "BjyAuthorize\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Marco Pivetta",
+                "email": "ocramius@gmail.com",
+                "homepage": "http://ocramius.github.com/",
+                "role": "Developer"
+            },
+            {
+                "name": "Ben Youngblood",
+                "email": "bx.youngblood@gmail.com",
+                "homepage": "http://bjyoungblood.com/",
+                "role": "Developer"
+            }
+        ],
+        "description": "Zend\\Acl based firewall system for ZF2 dispatch protection",
+        "homepage": "https://github.com/bjyoungblood/BjyAuthorize",
+        "keywords": [
+            "acl",
+            "zf2",
+            "zfc-user"
+        ]
     }
 ]
