@@ -1,6 +1,4 @@
 <?php
-
-
 return array(
 		'controllers' => array(
 				'invokables' => array(
@@ -44,12 +42,12 @@ return array(
 								'options' => array(
 										'route'    => '/album-client[/][:action][/:id]',
 										'constraints' => array(
-												'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
-												'id'     => '[0-9]+',
+											'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+											'id'     => '[0-9]+',
 										),
 										'defaults' => array(
-												'controller' => 'Album\Controller\AlbumClient',
-												'action'     => 'index',
+											'controller' => 'Album\Controller\AlbumClient',
+											'action'     => 'index',
 										),
 								),
 						),

@@ -1,4 +1,12 @@
 {
+    "hash": "3d8fc311b085e1e9bc4ed181947f205d",
+    "packages": [
+        {
+            "package": "zendframework/zendframework",
+            "version": "2.0.5"
+        }
+    ],
+    "packages-dev": null,
     "_readme": [
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
