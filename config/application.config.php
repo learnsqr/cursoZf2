@@ -3,18 +3,17 @@
 return array(
     // This should be an array of module namespaces used in the application.
     'modules' => array(
-            'Application',
-            'Album',
+            'Application',            
             'ZfcBase',
             'ZfcAdmin',
             'ZfcUser',
-            'Developer',
             //'ScnSocialAuth',
-            //'BjyAuthorize',        
+            'BjyAuthorize',        
             //'Auth',
             'ZfcUserAdmin',
-            
-            //'BjyProfiler',
+
+        'Developer',
+            'Album',
             'ZendDeveloperTools'
     ),
 

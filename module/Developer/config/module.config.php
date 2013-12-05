@@ -45,11 +45,9 @@ return array(
     ),
     'view_manager' => array(
             'template_path_stack' => array(
-                    'album' => __DIR__ . '/../view',
+                    'developer' => __DIR__ . '/../view',
             ),
-            'strategies' => array(
-                    'ViewJsonStrategy',
-            ),
+            
     ),
     
     
