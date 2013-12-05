@@ -55,14 +55,6 @@ class ModuleOptions extends AbstractOptions implements
 		$this->tableName=$tableName;
 	}
 	
-	/**
-	 * get user table name
-	 *
-	 * @return string
-	 */
-	public function getTableName(){
-		return $this->tableName;
-	}
 	
 	
 }
