@@ -52,6 +52,17 @@ class Module
     						$config = $sm->get('Config');
     						return new Options\ModuleOptions(isset($config['breaker']) ? $config['breaker'] : array());
     					},
+    					
+    					'breaker_mapper' => function ($sm) {
+    						$options = $sm->get('breaker_module_options');
+    						$mapper = new Mapper\Project();
+    						$mapper->setDbAdapter($sm->get('Zend\Db\Adapter\Adapter'));
+    						$entityClass = $options->getProjectEntityClass();
+    						$mapper->setEntityPrototype(new $entityClass);
+    						$mapper->setHydrator(new Mapper\BreakerHydrator());
+    						//$mapper->setTableName($options->getTableName());
+    						return $mapper;
+    					},
     						
     					
     			),
