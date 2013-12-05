@@ -14,7 +14,8 @@ return array(
 
         'Developer',
             'Album',
-            'ZendDeveloperTools'
+            'ZendDeveloperTools',
+            'Breaker'
     ),
 
     // These are various options for the listeners attached to the ModuleManager

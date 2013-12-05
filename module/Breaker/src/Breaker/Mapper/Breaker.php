@@ -8,7 +8,7 @@ use Zend\Db\ResultSet\HydratingResultSet;
 use Zend\Paginator;
 use Breaker\Entity\BreakerInterface as BreakerEntityInterface;
 
-class Project extends AbstractDbMapper implements BreakerInterface
+class Breaker extends AbstractDbMapper implements BreakerInterface
 {
 
 	/**
@@ -133,6 +133,14 @@ class Project extends AbstractDbMapper implements BreakerInterface
     	$this->getEventManager()->trigger('remove', $this, array('entity' => $entity));
     	return $id;
     }
+	/* (non-PHPdoc)
+	 * @see \Breaker\Mapper\BreakerInterface::findByProducer()
+	 */
+	public function findByProducer($id) {
+		// TODO Auto-generated method stub
+		
+	}
+
     
 //     public function getTableName(){
 //     	return $this->tableName;

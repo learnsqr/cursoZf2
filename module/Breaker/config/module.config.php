@@ -10,12 +10,27 @@
 return array(
     'controllers' => array(
     		'invokables' => array(
-    				'Breaker\Controller\Index' => 'Breaker\Controller\IndexController'
+    				'Breaker\Controller\Index' => 'Breaker\Controller\IndexController',
+    		        'Breaker\Controller\Option' 	=> 'Breaker\Controller\OptionController',
     		),
     ),
     
     'router' => array(
         'routes' => array(
+            'option' => array(
+            		'type'    => 'segment',
+            		'options' => array(
+            				'route'    => '/option[/][:action][/:id]',
+            				'constraints' => array(
+            						'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+            						'id'     => '[0-9]+',
+            				),
+            				'defaults' => array(
+            						'controller' => 'Breaker\Controller\Option',
+            						'action'     => 'index',
+            				),
+            		),
+            ),
                        
             'breaker' => array(
                 'type'    => 'Literal',
@@ -28,7 +43,7 @@ return array(
                     ),
                 ),
                 'may_terminate' => true,
-                'child_routes' => array(
+                'child_routes' => array(                    
                     'default' => array(
                         'type'    => 'Segment',
                         'options' => array(
@@ -48,7 +63,7 @@ return array(
    
     'view_manager' => array(
     		'template_path_stack' => array(
-    				'album' => __DIR__ . '/../view',
+    				'option' => __DIR__ . '/../view',
     		),
     		'strategies' => array(
     				'ViewJsonStrategy',
