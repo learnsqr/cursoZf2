@@ -25,5 +25,9 @@ $settings = array(
  */
 return array(
     'breaker' => $settings,
-    
+    'service_manager' => array(
+    		'aliases' => array(
+    				'breaker_zend_db_adapter' => (isset($settings['zend_db_adapter'])) ? $settings['zend_db_adapter']: 'Zend\Db\Adapter\Adapter',
+    		),
+    ),
 );

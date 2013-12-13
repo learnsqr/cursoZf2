@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "be695a1987a8a61f9e3f5903dd27cc9c",
+    "hash": "cb259b318071d7b58fe1b19d21bf80cf",
     "packages": [
         {
             "name": "bjyoungblood/bjy-authorize",
@@ -528,7 +528,7 @@
                 {
                     "name": "Martin Shwalbe",
                     "email": "martin.shwalbe@gmail.com",
-                    "homepage": "http://hounddog.github.com"
+                    "homepage": "http://hounddog.github.io"
                 }
             ],
             "description": "A generic Admin module for ZF2.",
