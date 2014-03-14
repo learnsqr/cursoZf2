@@ -11,6 +11,7 @@ return array(
     'ZfcBase' => array($vendorDir . '/zf-commons/zfc-base/src'),
     'ZfcAdmin' => array($vendorDir . '/zf-commons/zfc-admin/src'),
     'Zend\\' => array($vendorDir . '/zendframework/zendframework/library'),
+    'ZendXml' => array($vendorDir . '/zendframework/zendxml/library'),
     'ZendOAuth' => array($vendorDir . '/zendframework/zendoauth/library'),
     'ZendDeveloperTools' => array($vendorDir . '/zendframework/zend-developer-tools/src'),
     'ScnSocialAuthTest' => array($vendorDir . '/socalnick/scn-social-auth/test'),

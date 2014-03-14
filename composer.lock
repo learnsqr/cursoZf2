@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "cb259b318071d7b58fe1b19d21bf80cf",
+    "hash": "c763cc82c0581895eddb2208cf0fad97",
     "packages": [
         {
             "name": "bjyoungblood/bjy-authorize",
@@ -11,12 +11,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/bjyoungblood/BjyAuthorize.git",
-                "reference": "e1c5a5cda965d42359c3ee14fc1221f5170dc373"
+                "reference": "d9a40afc81205f83138eebc053dc62ed57694e8e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bjyoungblood/BjyAuthorize/zipball/e1c5a5cda965d42359c3ee14fc1221f5170dc373",
-                "reference": "e1c5a5cda965d42359c3ee14fc1221f5170dc373",
+                "url": "https://api.github.com/repos/bjyoungblood/BjyAuthorize/zipball/d9a40afc81205f83138eebc053dc62ed57694e8e",
+                "reference": "d9a40afc81205f83138eebc053dc62ed57694e8e",
                 "shasum": ""
             },
             "require": {
@@ -73,7 +73,7 @@
                 "zf2",
                 "zfc-user"
             ],
-            "time": "2013-10-29 17:47:34"
+            "time": "2013-12-24 12:23:08"
         },
         {
             "name": "bjyoungblood/bjy-profiler",
@@ -127,12 +127,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Danielss89/ZfcUserAdmin.git",
-                "reference": "a92eb8fc0ab7c87a3acad51c9c0bba404a0cf088"
+                "reference": "ab2cb7d2ec73bc733b6d8fb53639a85e5d1502aa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Danielss89/ZfcUserAdmin/zipball/a92eb8fc0ab7c87a3acad51c9c0bba404a0cf088",
-                "reference": "a92eb8fc0ab7c87a3acad51c9c0bba404a0cf088",
+                "url": "https://api.github.com/repos/Danielss89/ZfcUserAdmin/zipball/ab2cb7d2ec73bc733b6d8fb53639a85e5d1502aa",
+                "reference": "ab2cb7d2ec73bc733b6d8fb53639a85e5d1502aa",
                 "shasum": ""
             },
             "require": {
@@ -161,7 +161,7 @@
             "keywords": [
                 "zf2"
             ],
-            "time": "2013-11-29 16:01:07"
+            "time": "2014-01-12 10:48:13"
         },
         {
             "name": "hybridauth/hybridauth",
@@ -169,12 +169,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/hybridauth/hybridauth.git",
-                "reference": "6d89473b379fc7a904e69ee63f548af3308bd4d9"
+                "reference": "a6f00729b99f0b2e6903e4cc6cf5099941d319e6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hybridauth/hybridauth/zipball/6d89473b379fc7a904e69ee63f548af3308bd4d9",
-                "reference": "6d89473b379fc7a904e69ee63f548af3308bd4d9",
+                "url": "https://api.github.com/repos/hybridauth/hybridauth/zipball/a6f00729b99f0b2e6903e4cc6cf5099941d319e6",
+                "reference": "a6f00729b99f0b2e6903e4cc6cf5099941d319e6",
                 "shasum": ""
             },
             "require": {
@@ -210,7 +210,7 @@
                 "twitter",
                 "yahoo"
             ],
-            "time": "2013-02-21 06:45:16"
+            "time": "2014-03-06 12:41:08"
         },
         {
             "name": "socalnick/scn-social-auth",
@@ -218,12 +218,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/SocalNick/ScnSocialAuth.git",
-                "reference": "1b7d137ea7e3f5059577f40f364d82b0b50c6d46"
+                "reference": "a73796402866f51c7447527ae8e93dc0ef399cf3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SocalNick/ScnSocialAuth/zipball/1b7d137ea7e3f5059577f40f364d82b0b50c6d46",
-                "reference": "1b7d137ea7e3f5059577f40f364d82b0b50c6d46",
+                "url": "https://api.github.com/repos/SocalNick/ScnSocialAuth/zipball/a73796402866f51c7447527ae8e93dc0ef399cf3",
+                "reference": "a73796402866f51c7447527ae8e93dc0ef399cf3",
                 "shasum": ""
             },
             "require": {
@@ -234,7 +234,7 @@
                 "zf-commons/zfc-user": "0.1.*"
             },
             "require-dev": {
-                "mockery/mockery": ">=0.7.2"
+                "mockery/mockery": "0.8.0"
             },
             "type": "library",
             "autoload": {
@@ -247,6 +247,9 @@
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
             "authors": [
                 {
                     "name": "Nicholas Calugar",
@@ -260,7 +263,7 @@
             "keywords": [
                 "zf2"
             ],
-            "time": "2013-12-02 19:55:08"
+            "time": "2014-03-09 00:14:03"
         },
         {
             "name": "zendframework/zend-developer-tools",
@@ -268,12 +271,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/ZendDeveloperTools.git",
-                "reference": "8c38e67884268c94426cc4c8647d064ef13d100a"
+                "reference": "3e4fb960030a055ac27a7e214ec2586f7d54ad3d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/ZendDeveloperTools/zipball/8c38e67884268c94426cc4c8647d064ef13d100a",
-                "reference": "8c38e67884268c94426cc4c8647d064ef13d100a",
+                "url": "https://api.github.com/repos/zendframework/ZendDeveloperTools/zipball/3e4fb960030a055ac27a7e214ec2586f7d54ad3d",
+                "reference": "3e4fb960030a055ac27a7e214ec2586f7d54ad3d",
                 "shasum": ""
             },
             "require": {
@@ -321,24 +324,25 @@
                 "module",
                 "zf2"
             ],
-            "time": "2013-11-13 19:43:45"
+            "time": "2014-03-12 00:47:04"
         },
         {
             "name": "zendframework/zendframework",
-            "version": "2.2.5",
+            "version": "2.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zf2.git",
-                "reference": "4a7cf6a4cf791244e14aa0ca49d1f06916b63202"
+                "reference": "5d22cee82f6f7f9218f47f22a145f3e95c39cacf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zf2/zipball/4a7cf6a4cf791244e14aa0ca49d1f06916b63202",
-                "reference": "4a7cf6a4cf791244e14aa0ca49d1f06916b63202",
+                "url": "https://api.github.com/repos/zendframework/zf2/zipball/5d22cee82f6f7f9218f47f22a145f3e95c39cacf",
+                "reference": "5d22cee82f6f7f9218f47f22a145f3e95c39cacf",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.3"
+                "php": ">=5.3.23",
+                "zendframework/zendxml": "~1.0-dev"
             },
             "replace": {
                 "zendframework/zend-authentication": "self.version",
@@ -398,14 +402,16 @@
                 "fabpot/php-cs-fixer": "*@dev",
                 "ircmaxell/random-lib": "dev-master",
                 "ircmaxell/security-lib": "dev-master",
-                "ocramius/proxy-manager": "0.4.*",
-                "phpunit/phpunit": "3.7.*"
+                "mikey179/vfsstream": "1.2.*",
+                "phpunit/phpunit": "3.7.*",
+                "satooshi/php-coveralls": "dev-master",
+                "sebastianbergmann/phpcov": "1.1.0"
             },
             "suggest": {
                 "doctrine/annotations": "Doctrine Annotations >=1.0 for annotation features",
                 "ext-intl": "ext/intl for i18n features (included in default builds of PHP)",
                 "ircmaxell/random-lib": "Fallback random byte generator for Zend\\Math\\Rand if OpenSSL/Mcrypt extensions are unavailable",
-                "ocramius/proxy-manager": "ProxyManager to handle lazy initialization of services",
+                "ocramius/proxy-manager": "ProxyManager 0.5.* to handle lazy initialization of services",
                 "zendframework/zendpdf": "ZendPdf for creating PDF representations of barcodes",
                 "zendframework/zendservice-recaptcha": "ZendService\\ReCaptcha for rendering ReCaptchas in Zend\\Captcha and/or Zend\\Form"
             },
@@ -436,7 +442,7 @@
                 "framework",
                 "zf2"
             ],
-            "time": "2013-10-31 15:48:16"
+            "time": "2014-03-12 16:51:16"
         },
         {
             "name": "zendframework/zendoauth",
@@ -484,6 +490,51 @@
                 "zf2"
             ],
             "time": "2013-06-10 21:09:59"
+        },
+        {
+            "name": "zendframework/zendxml",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zendframework/ZendXml.git",
+                "reference": "559b34f426d33a11c3db118e00ce14bb8dc64e5f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zendframework/ZendXml/zipball/559b34f426d33a11c3db118e00ce14bb8dc64e5f",
+                "reference": "559b34f426d33a11c3db118e00ce14bb8dc64e5f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "fabpot/php-cs-fixer": "*@dev",
+                "phpunit/phpunit": "~3.7"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "ZendXml": "library/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "Utility library for XML usage, best practices, and security in PHP",
+            "homepage": "http://packages.zendframework.com/",
+            "keywords": [
+                "security",
+                "xml",
+                "zf2"
+            ],
+            "time": "2014-03-05 22:25:44"
         },
         {
             "name": "zf-commons/zfc-admin",
@@ -597,12 +648,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ZF-Commons/ZfcUser.git",
-                "reference": "397ffe436a1aaf88d7f67b3d703773726a043ee4"
+                "reference": "a876f5765ea39256cb572048b7f6a425cec5ff13"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ZF-Commons/ZfcUser/zipball/397ffe436a1aaf88d7f67b3d703773726a043ee4",
-                "reference": "397ffe436a1aaf88d7f67b3d703773726a043ee4",
+                "url": "https://api.github.com/repos/ZF-Commons/ZfcUser/zipball/a876f5765ea39256cb572048b7f6a425cec5ff13",
+                "reference": "a876f5765ea39256cb572048b7f6a425cec5ff13",
                 "shasum": ""
             },
             "require": {
@@ -638,6 +689,9 @@
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
             "authors": [
                 {
                     "name": "Kyle Spraggs",
@@ -655,7 +709,7 @@
             "keywords": [
                 "zf2"
             ],
-            "time": "2013-11-22 07:11:38"
+            "time": "2014-03-07 12:02:08"
         }
     ],
     "packages-dev": [

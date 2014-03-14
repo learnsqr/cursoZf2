@@ -3,8 +3,8 @@
 
 $dbParams = array(
     'database'  => 'zf2',
-    'username'  => 'root',
-    'password'  => '',
+    'username'  => 'php',
+    'password'  => '1234',
     'hostname'  => 'localhost',
 );
 
