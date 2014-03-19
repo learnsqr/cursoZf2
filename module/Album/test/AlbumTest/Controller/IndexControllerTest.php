@@ -11,12 +11,12 @@ class AlbumControllerTest extends AbstractHttpControllerTestCase
 	public function setUp()
 	{
 		$this->setApplicationConfig(
-				include 'C:\zf2\config\application.config.php'
+				include 'J:\www\cursoZf2\config\application.config.php'
 		);
 		parent::setUp();
 	}
 	
-	public function testOldIndexActionCanBeAccessed()
+	public function _testOldIndexActionCanBeAccessed()
 	{
 		$this->dispatch('/album');
 		$this->assertResponseStatusCode(200);
