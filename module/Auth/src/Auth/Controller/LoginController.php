@@ -21,11 +21,13 @@ class LoginController extends AbstractActionController
 		$form->get('submit')->setValue('Login');
 		$request = $this->getRequest();
 		if ($request->isPost()) {
-			/*                $form->setData($request->getPost());
-			 if ($form->isValid()) {
-			// Redirect to list of albums
-			return $this->redirect()->toRoute('login');
-			}*/
+		  /* 
+            $form->setData($request->getPost());
+			if ($form->isValid()) {
+			    // Redirect to list of albums
+                return $this->redirect()->toRoute('login');
+			}
+		  */
 		}
 		return array('form' => $form);
 	}
@@ -34,13 +36,13 @@ class LoginController extends AbstractActionController
 	public function twitterAction()
 	{
 		$config = array(
-				'callbackUrl' => 'http://zf2.local',
-				'consumerKey' => '6m5PRdgc8L34OHt0jl7XQ',
-				'consumerSecret' => 'MbrgvIa7AQRCkNaHToKGdyIfuBPlhUVKKN2fo7k',
-				'siteUrl'      => 'https://api.twitter.com/oauth',
-				'authorizeUrl'    => 'https://api.twitter.com/oauth/authenticate',
+				'callbackUrl'       => 'http://zf2.local',
+				'consumerKey'       => '6m5PRdgc8L34OHt0jl7XQ',
+				'consumerSecret'    => 'MbrgvIa7AQRCkNaHToKGdyIfuBPlhUVKKN2fo7k',
+				'siteUrl'           => 'https://api.twitter.com/oauth',
+				'authorizeUrl'      => 'https://api.twitter.com/oauth/authenticate',
 				'requestTokenUrl'   => 'https://api.twitter.com/oauth/request_token',
-				'accessTokenUrl'  => 'https://api.twitter.com/oauth/access_token'
+				'accessTokenUrl'    => 'https://api.twitter.com/oauth/access_token'
 		);
 
 		$httpConfig = array(
@@ -60,24 +62,7 @@ class LoginController extends AbstractActionController
 			$token = $consumer->getRequestToken();
 			$_SESSION['TWITTER_REQUEST_TOKEN'] = serialize($token);
 			$consumer->redirect();		
-		}		
-		
-		
-		
-		
-/*		
-	    
-	    // fetch a request token
-	    $token = $consumer->getRequestToken();
-    
-	    // persist the token to storage
-	    $_SESSION['TWITTER_REQUEST_TOKEN'] = serialize($token);
-	    
-	    // redirect the user
-	    $consumer->redirect();*/
-		
+		}
 	}
-	
-   
     
 }
