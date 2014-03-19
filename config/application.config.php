@@ -7,9 +7,9 @@ return array(
             'ZfcBase',
             'ZfcAdmin',
             'ZfcUser',
-            //'ScnSocialAuth',
+            'ScnSocialAuth',
             'BjyAuthorize',        
-            //'Auth',
+            'Auth',
             'ZfcUserAdmin',
 
         'Developer',
