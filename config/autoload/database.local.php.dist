@@ -1,0 +1,53 @@
+<?php
+/**
+ * Local Database Configuration Override
+ *
+ * You can use this file for overriding database configuration values from modules, etc.
+ *
+ * @NOTE: In practice, this file will typically be INCLUDED in your source
+ * control, so do not include passwords or other sensitive information in this
+ * file.
+ */
+return array(
+		'db' => array(
+				// for primary db adapter that called
+				// by $sm->get('Zend\Db\Adapter\Adapter')
+				'driver'    => 'Pdo',
+				'driver_options'  => array(
+						PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\''
+				),
+				'dsn'       => 'mysql:dbname=zf2;host=localhost',
+				'database'  => 'zf2',
+				'username'  => 'php',
+				'password'  => '1234',
+				'hostname'  => 'localhost',
+				 
+				// to allow other adapter to be called by
+				// $sm->get('dbMasterAdapter') or $sm->get('dbSlaveAdapter') based on the adapters config.
+				'adapters' => array(
+						'dbMasterAdapter' => array(
+								'driver'         => 'Pdo',
+								'driver_options'  => array(
+										PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\''
+								),
+								'dsn'       => 'mysql:dbname=zf2;host=localhost',
+								'database'  => 'zf2',
+								'username'  => 'php',
+								'password'  => '1234',
+								'hostname'  => 'localhost',
+						),
+						
+						'dbSlaveAdapter' => array(
+								'driver'         => 'Pdo',
+								'driver_options'  => array(
+										PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\''
+								),
+								'dsn'       => 'mysql:dbname=zf2;host=localhost',
+								'database'  => 'zf2',
+								'username'  => 'php',
+								'password'  => '1234',
+								'hostname'  => 'localhost',
+						),						
+				),
+		),
+);
