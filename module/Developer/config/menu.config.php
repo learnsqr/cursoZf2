@@ -12,7 +12,7 @@ return array(
 	    	array(
 	    		'label' => 'Docs',
 	    		'route' => 'markdown',
-	    		'action' => 'markdown',
+	    		'action' => 'index',
 	    	),	    	
     	),
 	),

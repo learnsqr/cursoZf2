@@ -18,12 +18,15 @@ class MarkdownController extends AbstractActionController
     public function indexAction()
     {
     	$data = $this->params()->fromRoute('filename', 0);
-    	echo __DIR__."/../../../../../docs/developer\\".$data.".md";
     	if(file_exists(__DIR__."/../../../../../docs/developer\\".$data.".md"))
     		$data = file_get_contents(__DIR__."/../../../../../docs/developer\\".$data.".md");
-    	else 
-    		$data=null;
-
+    	else if($data!==0)
+    	{  
+            $this->getResponse()->setStatusCode(404);
+    	}
+    	else
+    	    $data=null;
+    	
     	return array('data' => $data);
     }
 
