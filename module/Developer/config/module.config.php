@@ -10,7 +10,8 @@
 return array(
     'controllers' => array(
         'invokables' => array(
-            'Developer\Controller\Index' => 'Developer\Controller\IndexController'
+            'Developer\Controller\Index' => 'Developer\Controller\IndexController',
+            'Developer\Controller\Markdown' => 'Developer\Controller\MarkdownController'
         ),
     ),
     'router' => array(
@@ -25,21 +26,31 @@ return array(
                         'action'        => 'index',
                     ),
                 ),
-                'may_terminate' => true,
-                'child_routes' => array(
-                    'default' => array(
-                        'type'    => 'Segment',
-                        'options' => array(
-                            'route'    => '/[:controller[/:action]]',
-                            'constraints' => array(
-                                'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
-                                'action'     => '[a-zA-Z][a-zA-Z0-9_-]*',
-                            ),
-                            'defaults' => array(
-                            ),
-                        ),
-                    ),
-                ),
+//                 'may_terminate' => true,
+//                 'child_routes' => array(
+//                     'default' => array(
+//                         'type'    => 'Segment',
+//                         'options' => array(
+//                             'route'    => '/[:controller[/:action]]',
+//                             'constraints' => array(
+//                                 'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
+//                                 'action'     => '[a-zA-Z][a-zA-Z0-9_-]*',
+//                             ),
+//                             'defaults' => array(
+//                             ),
+//                         ),
+//                     ),
+//                 ),
+            ),
+            'markdown' => array(
+            		'type'    => 'segment',
+            		'options' => array(
+            				'route'    => '/docs[/:filename]',
+            				'defaults' => array(
+            						'controller' => 'Developer\Controller\Markdown',
+            						'action'     => 'index',
+            				),
+            		),
             ),
         ),
     ),
@@ -49,7 +60,8 @@ return array(
             ),
             
     ),
-    
-    
+    'navigation' => array(
+    		'default' => include('menu.config.php')
+    ),    
     
 );
