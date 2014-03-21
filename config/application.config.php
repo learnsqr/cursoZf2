@@ -1,9 +1,10 @@
 <?php
 
-return array(
-    // This should be an array of module namespaces used in the application.
-    'modules' => array(
-            'Application',            
+($env = getenv('APPLICATION_ENV')) ?:($env= 'production');
+
+$modpro = array(
+		// General
+		'Application',            
             'ZfcBase',
             'ZfcAdmin',
             'ZfcUser',
@@ -11,13 +12,25 @@ return array(
             'BjyAuthorize',        
             'Auth',
             'ZfcUserAdmin',
+);
+if ($env == 'development')
+{
+	// Modules Debug
+	$moddev =array(
+		'Developer',
+			'ZendDeveloperTools',
+			'Album',
+			'Checklist',
+			'EdpMarkdown',
+	);
+}
+else
+	$moddev=array();
+$modules=array_merge($modpro,$moddev);
 
-        'Developer',
-            'Album',
-            'ZendDeveloperTools',
-            'Breaker'
-    ),
-
+return array(
+    // This should be an array of module namespaces used in the application.
+    'modules' => $modules,
     // These are various options for the listeners attached to the ModuleManager
     'module_listener_options' => array(
         // This should be an array of paths in which modules reside.
