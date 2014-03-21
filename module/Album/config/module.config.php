@@ -62,4 +62,7 @@ return array(
 						'ViewJsonStrategy',
 				),
 		),
+        'navigation' => array(
+        		'default' => include('menu.config.php')
+        ),
 );

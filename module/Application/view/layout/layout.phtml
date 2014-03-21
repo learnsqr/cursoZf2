@@ -32,8 +32,57 @@
                     <a class="navbar-brand" href="<?php echo $this->url('home') ?>"><img src="<?php echo $this->basePath('img/zf2-logo.png') ?>" alt="Zend Framework 2"/>&nbsp;<?php echo $this->translate('Curso ZF2 Skeleton') ?></a>
                 </div>
                 <div class="collapse navbar-collapse">
+                <?php 
+						echo "<ul class=\"nav navbar-nav\">";
+						$navHelper = $this->navigation('navigation');
+						$containers = $navHelper->getContainer();
+						foreach($containers->getPages() as $page) 
+						{
+							$class = "";
+							if ($page->isActive()) {
+								$class = "active";
+							}
+							if(count($page)) 
+							{
+								// if there are subpages we render the menu a bit different
+								$label = $page->getLabel();
+								$label = $this->translate($label); // translated label
+								$label = $this->escapehtml($label); // sanitized label
+								printf('<li class="dropdown%s">'."\n",
+										($class?' '.$class:'')
+								);
+								printf(' <a href="%s" class="dropdown-toggle" data-toggle="dropdown">%s<b
+											class="caret"></b></a>'."\n",
+											$page->getHref(),
+											$label
+								);
+								echo '<ul class="dropdown-menu">'."\n";
+								foreach($page as $subPage) 
+								{
+									if(!$navHelper->accept($subPage)) 
+									{
+										continue;
+									}
+									printf("<li>%s</li>\n",$navHelper->htmlify($subPage));
+								}
+								echo "</ul></li>\n";
+							}
+							else 
+							{
+								printf("<li class=\"%s\">%s</li>\n",
+								$class,$navHelper->htmlify($page));
+							}
+						}
+						echo "</ul>";						
+					?>
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="<?php echo $this->url('home') ?>"><?php echo $this->translate('Home') ?></a></li>
+	                    <?php 
+// 						 echo $this->navigation('navigation')
+// 						           ->menu()
+// 						           ->setMinDepth(0)
+// 						           ->setMaxDepth(0)
+// 						           ->setUlClass('nav navbar-nav');
+						 ?>                       
                     </ul>
                     
                     <ul class="nav navbar-nav">
@@ -42,10 +91,6 @@
 
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="<?php echo $this->url('zfcuser/login') ?>"><?php echo $this->translate('Login') ?></a></li>
-                    </ul>
-                    
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="<?php echo $this->url('album') ?>"><?php echo $this->translate('Album') ?></a></li>
                     </ul>
                     
                     <ul class="nav navbar-nav">
@@ -59,6 +104,12 @@
             </div>
         </nav>
         <div class="container">
+            <?php
+		     echo $this->navigation('navigation') // <-- Update this!!
+		               ->breadcrumbs()
+		               ->setMinDepth(0)
+		               ->setPartial(array('partial/breadcrumb.phtml', 'Album'));
+		     ?>
             <?php echo $this->content; ?>
             <hr>
             <footer>
