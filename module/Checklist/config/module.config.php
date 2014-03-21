@@ -29,4 +29,7 @@ return array(
             'Checklist' => __DIR__ . '/../view',
         ),
     ),
+    'navigation' => array(
+    		'default' => include('menu.config.php')
+    ),
 );
