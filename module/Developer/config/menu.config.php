@@ -13,6 +13,19 @@ return array(
 	    		'label' => 'Docs',
 	    		'route' => 'markdown',
 	    		'action' => 'index',
+	    	    'order' => 100,
+	    	    'pages' => array(
+	    	    		array(
+	    	    				'label' => 'Do',
+	    	    				'route' => 'markdown',
+	    	    				'params'     => array('filename' => 'do')
+	    	    		),
+	    	    		array(
+	    	    				'label' => 'Apigility',
+	    	    				'route' => 'markdown',
+	    	    				'params'     => array('filename' => 'apigility')
+	    	    		),
+	    	    ),
 	    	),	    	
     	),
 	),
