@@ -79,7 +79,15 @@ project and you should be ready to go! It should look something like below:
             Allow from all
         </Directory>
     </VirtualHost>
-    
+
+### Apache Setup
+
+For fix the following error:
+Catchable fatal error: Argument 2 passed to Zend\Db\TableGateway\TableGateway::__construct() must be an instance of Zend\Db\Adapter\AdapterInterface, boolean given, called in /Some/Path/vendor/bjyoungblood/bjy-authorize/src/BjyAuthorize/Service/ZfcUserZendDbIdentityProviderServiceFactory.php on line 31 and defined in /Some/Path/cursoZf2/vendor/zendframework/zendframework/library/Zend/Db/TableGateway/TableGateway.php on line 31
+
+DO: 
+copy database.local.php.dist to database.local.php
+	    
 =======
 cursoZf2
 ========

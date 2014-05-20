@@ -10,16 +10,21 @@
 namespace Developer\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
-use Zend\View\Helper\ViewModel;
-use Zend\Config\Reader;
+use Zend\View\Model\ViewModel;
 
 class MarkdownController extends AbstractActionController
 {
     public function indexAction()
     {
     	$data = $this->params()->fromRoute('filename', 0);
-    	if(file_exists(__DIR__."/../../../../../docs/developer\\".$data.".md"))
-    		$data = file_get_contents(__DIR__."/../../../../../docs/developer\\".$data.".md");
+    	if(file_exists(APPLICATION_PATH."/docs/developer/".$data.".md"))
+    	{
+    		
+    		$data = file_get_contents(APPLICATION_PATH."/docs/developer/".$data.".md");
+    		$model = new ViewModel(array('data' => $data));
+    		$model->setTemplate("developer/markdown/marks");
+    		return $model;
+    	}
     	else if($data!==0)
     	{  
             $this->getResponse()->setStatusCode(404);

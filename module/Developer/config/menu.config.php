@@ -25,6 +25,11 @@ return array(
 	    	    				'route' => 'markdown',
 	    	    				'params'     => array('filename' => 'apigility')
 	    	    		),
+    	    	        array(
+    	    	        		'label' => 'Ful Mapper',
+    	    	        		'route' => 'markdown',
+    	    	        		'params'     => array('filename' => 'fulmapper')
+	    	          ),
 	    	    ),
 	    	),	    	
     	),

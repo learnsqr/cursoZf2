@@ -6,7 +6,14 @@
         "framework",
         "zf2"
     ],
-    "homepage": "http://framework.zend.com/",
+    "homepage": "https://github.com/agustincl/cursoZf2",
+    "authors": [
+        {
+            "name": "Agustín F. Calderón M.",
+            "email": "agustincl@gmail.com",
+            "homepage": "http://elementalweb.net/"
+        }
+    ],
     "require": {
         "php": ">=5.3.3",
         "zendframework/zendframework": "2.*",
@@ -17,6 +24,7 @@
         "socalnick/scn-social-auth": "dev-master",
         "bjyoungblood/bjy-authorize": "dev-master",
         "zendframework/zendoauth" : "=2.0.2",     
-        "danielss89/zfc-user-admin" : "dev-master"
+        "danielss89/zfc-user-admin" : "dev-master",
+        "michelf/php-markdown": "~1.4"
     }
 }
