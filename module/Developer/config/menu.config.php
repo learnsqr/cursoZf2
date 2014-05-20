@@ -30,6 +30,16 @@ return array(
     	    	        		'route' => 'markdown',
     	    	        		'params'     => array('filename' => 'fulmapper')
 	    	          ),
+	    	    		array(
+	    	    				'label' => 'HTTP status codes',
+	    	    				'route' => 'markdown',
+	    	    				'params'     => array('filename' => 'http-status-codes')
+	    	    		),
+	    	    		array(
+	    	    				'label' => 'Markdown Sintax',
+	    	    				'route' => 'markdown',
+	    	    				'params'     => array('filename' => 'markdown-sintax')
+	    	    		),
 	    	    ),
 	    	),	    	
     	),
