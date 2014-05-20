@@ -21,7 +21,7 @@ if ($env == 'development')
 			'ZendDeveloperTools',
 			'Album',
 			'Checklist',
-			'EdpMarkdown',
+			'Cheetara',
 	);
 }
 else
