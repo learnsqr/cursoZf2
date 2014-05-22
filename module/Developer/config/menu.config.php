@@ -40,6 +40,11 @@ return array(
 	    	    				'route' => 'markdown',
 	    	    				'params'     => array('filename' => 'markdown-sintax')
 	    	    		),
+	    	    		array(
+	    	    				'label' => 'Erratas',
+	    	    				'route' => 'markdown',
+	    	    				'params'     => array('filename' => 'erratas')
+	    	    		),
 	    	    ),
 	    	),	    	
     	),
