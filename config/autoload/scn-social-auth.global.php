@@ -163,10 +163,25 @@ $settings = array(
     //'yandex_enabled' => true,
 
     /**
+     * Instagram Enabled
+     *
+     * Please specify if Instagram is enabled
+     */
+    //'instagram_enabled' => true,
+
+    /**
      * Set to true if you want to display only the social login buttons without
      * the username/password etc. from ZfcUser.
      */
     //'social_login_only' => false,
+
+    /**
+     * Allow users to register their new account with social login
+     *
+     * Default: true
+     * Accepted Values: boolean (true or false)
+     */
+    // 'enable_social_registration' => true,
 
     /**
      * End of ScnSocialAuth configuration
