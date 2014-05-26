@@ -9,6 +9,11 @@ return array(
     	    		'route' => 'developer',
     	    		'action' => 'index',
     	    ),
+    			array(
+    					'label' => 'Status',
+    					'route' => 'status',
+    					'action' => 'status',
+    			),
 	    	array(
 	    		'label' => 'Docs',
 	    		'route' => 'markdown',
@@ -36,14 +41,19 @@ return array(
 	    	    				'params'     => array('filename' => 'http-status-codes')
 	    	    		),
 	    	    		array(
-	    	    				'label' => 'Markdown Sintax',
+	    	    				'label' => 'Markdown Syntax',
 	    	    				'route' => 'markdown',
-	    	    				'params'     => array('filename' => 'markdown-sintax')
+	    	    				'params'     => array('filename' => 'markdown-syntax')
 	    	    		),
 	    	    		array(
 	    	    				'label' => 'Erratas',
 	    	    				'route' => 'markdown',
 	    	    				'params'     => array('filename' => 'erratas')
+	    	    		),
+	    	    		array(
+	    	    				'label' => 'Services',
+	    	    				'route' => 'markdown',
+	    	    				'params'     => array('filename' => 'services')
 	    	    		),
 	    	    ),
 	    	),	    	

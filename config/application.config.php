@@ -8,10 +8,13 @@ $modpro = array(
             'ZfcBase',
             'ZfcAdmin',
             'ZfcUser',
-            'ScnSocialAuth',
+			//'ScnSocialAuth',
             'BjyAuthorize',        
             'Auth',
             'ZfcUserAdmin',
+			//'MtMail',
+			//'HtUserRegistration',
+			
 );
 if ($env == 'development')
 {

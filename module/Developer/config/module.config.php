@@ -16,6 +16,17 @@ return array(
     ),
     'router' => array(
         'routes' => array(   
+        		'status' => array(
+        				'type'    => 'Literal',
+        				'options' => array(
+        						'route'    => '/status',
+        						'defaults' => array(
+        								'__NAMESPACE__' => 'Developer\Controller',
+        								'controller'    => 'Index',
+        								'action'        => 'status',
+        						),
+        				),
+        		),
             'developer' => array(
                 'type'    => 'Literal',
                 'options' => array(
