@@ -17,14 +17,21 @@
     "require": {
         "php": ">=5.3.3",
         "zendframework/zendframework": "2.*",
-        "zf-commons/zfc-user": "dev-master",
+        
+        
+        "firephp/firephp-core" : "dev-master",
         "bjyoungblood/bjy-profiler": "dev-master",
         "zendframework/zend-developer-tools": "dev-master",
-        "hybridauth/hybridauth": "dev-master",
+        "hybridauth/hybridauth": "2.2.*",        
         "socalnick/scn-social-auth": "dev-master",
+        
         "bjyoungblood/bjy-authorize": "dev-master",
         "zendframework/zendoauth" : "=2.0.2",     
         "danielss89/zfc-user-admin" : "dev-master",
-        "michelf/php-markdown": "~1.4"
+        "michelf/php-markdown": "~1.4",
+        
+        
+        "hrevert/ht-user-registration": "dev-master"
+        
     }
 }

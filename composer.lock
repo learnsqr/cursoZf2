@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "30b723a18fd7f56f0bebb2f034fcc74e",
+    "hash": "62db2d44650fbb5af059552b018e0fea",
     "packages": [
         {
             "name": "bjyoungblood/bjy-authorize",
@@ -167,17 +167,103 @@
             "time": "2014-01-12 10:48:13"
         },
         {
-            "name": "hybridauth/hybridauth",
+            "name": "firephp/firephp-core",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/hybridauth/hybridauth.git",
-                "reference": "6efc57c093d703decf4e3545ae83a00d729ce473"
+                "url": "https://github.com/firephp/firephp-core.git",
+                "reference": "bb0af2a62facaa07c08ed8ff9213f2966f32457b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hybridauth/hybridauth/zipball/6efc57c093d703decf4e3545ae83a00d729ce473",
-                "reference": "6efc57c093d703decf4e3545ae83a00d729ce473",
+                "url": "https://api.github.com/repos/firephp/firephp-core/zipball/bb0af2a62facaa07c08ed8ff9213f2966f32457b",
+                "reference": "bb0af2a62facaa07c08ed8ff9213f2966f32457b",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "lib/FirePHPCore/FirePHP.class.php",
+                    "lib/FirePHPCore/fb.php"
+                ],
+                "files": [
+                    "lib/FirePHPCore/fb.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Christoph Dorn",
+                    "email": "christoph@christophdorn.com",
+                    "homepage": "http://christophdorn.com"
+                }
+            ],
+            "description": "Traditional FirePHPCore library for sending PHP variables to the browser.",
+            "homepage": "https://github.com/firephp/firephp-core",
+            "time": "2014-02-26 18:33:14"
+        },
+        {
+            "name": "hrevert/ht-user-registration",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hrevert/HtUserRegistration.git",
+                "reference": "89df8984a0b10555c4fe8fb5a692ff70f0854330"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hrevert/HtUserRegistration/zipball/89df8984a0b10555c4fe8fb5a692ff70f0854330",
+                "reference": "89df8984a0b10555c4fe8fb5a692ff70f0854330",
+                "shasum": ""
+            },
+            "require": {
+                "mtymek/mt-mail": "1.0.*",
+                "php": ">=5.4",
+                "zf-commons/zfc-user": ">=0.1,<2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "HtUserRegistration\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "ojhaujjwal",
+                    "email": "bring2uo@gmail.com"
+                },
+                {
+                    "name": "Hrevert Technologies",
+                    "email": "info@hrevert.com"
+                }
+            ],
+            "description": "A Zend Framework 2 module which extends the registration feature of ZfcUser with email address verification",
+            "homepage": "https://github.com/hrevert/HtUserRegistration",
+            "keywords": [
+                "module",
+                "zf2"
+            ],
+            "time": "2014-05-13 02:33:22"
+        },
+        {
+            "name": "hybridauth/hybridauth",
+            "version": "v2.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hybridauth/hybridauth.git",
+                "reference": "8baf9d12ef8ce886a047329607f6e326b230b0f6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hybridauth/hybridauth/zipball/8baf9d12ef8ce886a047329607f6e326b230b0f6",
+                "reference": "8baf9d12ef8ce886a047329607f6e326b230b0f6",
                 "shasum": ""
             },
             "require": {
@@ -213,7 +299,7 @@
                 "twitter",
                 "yahoo"
             ],
-            "time": "2014-05-15 19:50:46"
+            "time": "2014-05-25 04:27:18"
         },
         {
             "name": "michelf/php-markdown",
@@ -267,25 +353,81 @@
             "time": "2014-05-05 02:43:50"
         },
         {
+            "name": "mtymek/mt-mail",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mtymek/MtMail.git",
+                "reference": "ef0173e60bae18b56200f3d1976b843a2e490ac2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mtymek/MtMail/zipball/ef0173e60bae18b56200f3d1976b843a2e490ac2",
+                "reference": "ef0173e60bae18b56200f3d1976b843a2e490ac2",
+                "shasum": ""
+            },
+            "require": {
+                "zendframework/zend-escaper": ">=2.2.1",
+                "zendframework/zend-filter": ">=2.2.1",
+                "zendframework/zend-mail": ">=2.2.1",
+                "zendframework/zend-validator": ">=2.2.1",
+                "zendframework/zend-view": ">=2.2.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "MtMail": "src/",
+                    "MtMailTest": "test/"
+                },
+                "classmap": [
+                    "./Module.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD 2-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Mateusz Tymek",
+                    "email": "mtymek@gmail.com",
+                    "homepage": "http://mateusztymek.pl"
+                }
+            ],
+            "description": "ZF2 e-mail module. Using this library can easily create e-mail messages from PHTML templates (with optional layouts) and send them using configurable transports. Pluggable, EventManager-driven architecture allows you to customize every aspect of the process.",
+            "keywords": [
+                "e-mail",
+                "email",
+                "mail template",
+                "mail transport",
+                "module",
+                "zf2"
+            ],
+            "time": "2014-03-15 12:05:36"
+        },
+        {
             "name": "socalnick/scn-social-auth",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SocalNick/ScnSocialAuth.git",
-                "reference": "a73796402866f51c7447527ae8e93dc0ef399cf3"
+                "reference": "b38f2aa71fade44736755aeb1b5128305f4cdf1a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SocalNick/ScnSocialAuth/zipball/a73796402866f51c7447527ae8e93dc0ef399cf3",
-                "reference": "a73796402866f51c7447527ae8e93dc0ef399cf3",
+                "url": "https://api.github.com/repos/SocalNick/ScnSocialAuth/zipball/b38f2aa71fade44736755aeb1b5128305f4cdf1a",
+                "reference": "b38f2aa71fade44736755aeb1b5128305f4cdf1a",
                 "shasum": ""
             },
             "require": {
-                "hybridauth/hybridauth": "dev-master",
+                "hybridauth/hybridauth": "2.2.*",
                 "php": ">=5.3.3",
                 "zendframework/zendframework": "2.*",
                 "zf-commons/zfc-base": "0.1.*",
-                "zf-commons/zfc-user": "0.1.*"
+                "zf-commons/zfc-user": "1.0.*"
             },
             "require-dev": {
                 "mockery/mockery": "0.8.0"
@@ -317,7 +459,7 @@
             "keywords": [
                 "zf2"
             ],
-            "time": "2014-03-09 00:14:03"
+            "time": "2014-05-25 15:39:19"
         },
         {
             "name": "zendframework/zend-developer-tools",
@@ -633,7 +775,7 @@
                 {
                     "name": "Martin Shwalbe",
                     "email": "martin.shwalbe@gmail.com",
-                    "homepage": "http://hounddog.github.io"
+                    "homepage": "http://hounddog.github.com"
                 }
             ],
             "description": "A generic Admin module for ZF2.",
@@ -698,16 +840,16 @@
         },
         {
             "name": "zf-commons/zfc-user",
-            "version": "dev-master",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ZF-Commons/ZfcUser.git",
-                "reference": "8884829e114ad12c8f51482ba7232929f0c139fb"
+                "reference": "db5b39df5f640c86299c74f46a91869c09c9a3ed"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ZF-Commons/ZfcUser/zipball/8884829e114ad12c8f51482ba7232929f0c139fb",
-                "reference": "8884829e114ad12c8f51482ba7232929f0c139fb",
+                "url": "https://api.github.com/repos/ZF-Commons/ZfcUser/zipball/db5b39df5f640c86299c74f46a91869c09c9a3ed",
+                "reference": "db5b39df5f640c86299c74f46a91869c09c9a3ed",
                 "shasum": ""
             },
             "require": {
@@ -771,7 +913,7 @@
             "keywords": [
                 "zf2"
             ],
-            "time": "2014-05-11 16:08:01"
+            "time": "2014-04-17 10:31:44"
         }
     ],
     "packages-dev": [
@@ -782,13 +924,13 @@
     ],
     "minimum-stability": "stable",
     "stability-flags": {
-        "zf-commons/zfc-user": 20,
+        "firephp/firephp-core": 20,
         "bjyoungblood/bjy-profiler": 20,
         "zendframework/zend-developer-tools": 20,
-        "hybridauth/hybridauth": 20,
         "socalnick/scn-social-auth": 20,
         "bjyoungblood/bjy-authorize": 20,
-        "danielss89/zfc-user-admin": 20
+        "danielss89/zfc-user-admin": 20,
+        "hrevert/ht-user-registration": 20
     },
     "platform": {
         "php": ">=5.3.3"

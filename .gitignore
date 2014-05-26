@@ -64,3 +64,8 @@ public/assets/vendor/
 # Third-Part Binaries #
 #######################
 vendor/bin
+
+# Zend Framework directories #
+##############################
+data/cache
+data/mail
