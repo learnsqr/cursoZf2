@@ -54,6 +54,16 @@ return array(
 	    	    				'label' => 'Services',
 	    	    				'route' => 'markdown',
 	    	    				'params'     => array('filename' => 'services')
+	    	    		),	    	    		
+	    	    		array(
+	    	    				'label' => 'Wordpress',
+	    	    				'route' => 'markdown',
+	    	    				'params'     => array('filename' => 'wordpress')
+	    	    		),
+	    	    		array(
+	    	    				'label' => 'Social',
+	    	    				'route' => 'markdown',
+	    	    				'params'     => array('filename' => 'social')
 	    	    		),
 	    	    ),
 	    	),	    	
