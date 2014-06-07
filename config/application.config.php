@@ -24,6 +24,7 @@ if ($env == 'development')
 			'ZendDeveloperTools',
 			'Album',
 			'Checklist',
+			'StatusLib',
 	);
 }
 else

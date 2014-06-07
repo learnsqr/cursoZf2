@@ -31,7 +31,8 @@
         "michelf/php-markdown": "~1.4",
         
         
-        "hrevert/ht-user-registration": "dev-master"
+        "hrevert/ht-user-registration": "dev-master",
+        "zfcampus/statuslib-example": "dev-master"
         
     }
 }

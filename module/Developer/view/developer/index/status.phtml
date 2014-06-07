@@ -10,3 +10,7 @@
 </div>
     </div>
 </div>
+
+<?php foreach ($this->statuses as $status): ?>
+    <?php echo $status->message . ' by ' . $status->user; ?><br>
+<?php endforeach; ?>

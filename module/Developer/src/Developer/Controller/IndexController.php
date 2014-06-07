@@ -26,6 +26,9 @@ class IndexController extends AbstractActionController
     
     public function statusAction()
     {
-    	return new ViewModel();
+    	$statusMapper = $this->serviceLocator->get('StatusLib\Mapper');
+    	$statuses = $statusMapper->fetchAll();
+    	return new ViewModel(array('statuses' => $statuses));
+    	
     }
 }
