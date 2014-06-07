@@ -55,6 +55,7 @@ composer.lock
 *.local.php
 TestConfig.php
 TestConfiguration.php
+config/development.config.php
 
 # Bower Public #
 ################
