@@ -32,7 +32,12 @@
         
         
         "hrevert/ht-user-registration": "dev-master",
-        "zfcampus/statuslib-example": "dev-master"
+        "zfcampus/statuslib-example": "dev-master",
+        "zfcampus/zf-apigility": "~1.0@dev"
         
+    },
+    "require-dev": {
+        "zfcampus/zf-apigility-admin": "~1.0@dev",
+        "zfcampus/zf-development-mode": "~2.0"
     }
 }

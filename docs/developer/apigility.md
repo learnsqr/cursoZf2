@@ -2,7 +2,7 @@
 
 ## Instalación del Apigility
 
-1. desde c:\www
+1. desde /path/to/install
 2. php composer.phar create-project -sdev zfcampus/zf-apigility-skeleton apig
 3. php public/index.php development enable
 3. php -S localhost:8000 -t public public/index.php
@@ -13,7 +13,7 @@
 2. Crear una version, si se necesita
 3. Crear un Database Adapter con PDO_Mysql, username, password, host, port.
 4. Crear una API. El nombre NO puede llevar - (guión)
-5. Crear un Service
+5. Crear un RPC Service
 6. Hay dos tipos servicios: restService, Database
 7. Usar Database por ahora
 8. Verificar el Route: usamos albumrest (para diferenciarlo de album-rest, previamente creado) 

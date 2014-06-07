@@ -16,6 +16,22 @@ $modpro = array(
 			'HtUserRegistration',
 			
 );
+$api = array(
+		// Apigility 
+		'ZF\Apigility',
+        'ZF\Apigility\Provider',
+        'AssetManager',
+        'ZF\ApiProblem',
+        'ZF\MvcAuth',
+        'ZF\OAuth2',
+        'ZF\Hal',
+        'ZF\ContentNegotiation',
+        'ZF\ContentValidation',
+        'ZF\Rest',
+        'ZF\Rpc',
+        'ZF\Versioning',
+        'ZF\DevelopmentMode',
+);
 if ($env == 'development')
 {
 	// Modules Debug
@@ -30,6 +46,9 @@ if ($env == 'development')
 else
 	$moddev=array();
 $modules=array_merge($modpro,$moddev);
+
+if($_SERVER['APPLICATION_API']=='enable')
+	$modules=array_merge($modules,$api);
 
 return array(
     // This should be an array of module namespaces used in the application.
