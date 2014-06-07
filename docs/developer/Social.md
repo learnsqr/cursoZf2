@@ -8,13 +8,31 @@ Tips to use with facebook apps
 * Configuración segun diagrama  
 ![Alt text](/assets/developer/facebook-app.png "Facebook configurations")
 
-##Links
-A great links to visit
+##Google
+Tips to use with google apps
 
-* [Plugings para admins](http://www.smashingmagazine.com/2012/03/15/useful-free-admin-plugins-wordpress/) - Colección de plugings para admins
+* Acceso en [Developers.google](https://console.developers.google.com/project)
+* Configuración segun diagrama  
+![Alt text](/assets/developer/google-app.png "Google configurations")
 
-##Pluging
-Lista de plugings a considerar en un website
+##Twitter
+Tips to use with google apps
 
-* [Advanced Custom Fields](http://www.advancedcustomfields.com/)- Para crear formulario específicos en el wordpress
-* [BackUpWordpress](https://wordpress.org/plugins/backupwordpress/)- Backup!!!
+* Acceso en [Dev.twiiter](https://dev.twitter.com/)
+* Configuración segun diagrama  
+![Alt text](/assets/developer/twitter-app.png "Twitter configurations")
+
+##LinkedIn
+Tips to use with google apps
+
+* Acceso en [Developers.twitter](https://developer.linkedin.com/)
+* Configuración segun diagrama  
+![Alt text](/assets/developer/linkedin-app.png "LinkedIn configurations")
+
+##Yahoo
+Tips to use with google apps
+
+* Acceso en [Developers.yahoo](https://developer.yahoo.com/)
+* Configuración segun diagrama  
+![Alt text](/assets/developer/yahoo-app1.png "Yahoo configurations")
+![Alt text](/assets/developer/yahoo-app2.png "Yahoo configurations")

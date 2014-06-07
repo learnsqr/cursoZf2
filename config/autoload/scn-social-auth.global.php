@@ -35,7 +35,7 @@ $settings = array(
      *
      * Please specify if Facebook is enabled
      */
-    //'facebook_enabled' => true,
+    'facebook_enabled' => true,
 
     /**
      * Facebook Scope
@@ -46,7 +46,7 @@ $settings = array(
      * See the Facebook docs for a full list of available permissions:
      * http://developers.facebook.com/docs/reference/api/permissions.
      */
-    //'facebook_scope' => '',
+    'facebook_scope' => 'email',
 
     /**
      * Facebook Display
@@ -58,7 +58,7 @@ $settings = array(
      * Read the Facebook docs for more details:
      * http://developers.facebook.com/docs/reference/dialogs#display. Default: page
      */
-    //'facebook_display' => '',
+    'facebook_display' => 'popup',
 
     /**
      * Foursquare Enabled
@@ -93,7 +93,7 @@ $settings = array(
      *
      * Please specify if Google is enabled
      */
-    //'google_enabled' => true,
+    'google_enabled' => true,
 
     /**
      * Google Scope
@@ -104,28 +104,28 @@ $settings = array(
      * See the Google docs for a full list of available permissions:
      * https://developers.google.com/accounts/docs/OAuth2Login#scopeparameter.
      */
-    //'google_scope' => 'https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email',
+    'google_scope' => 'profile email',
 
     /**
      * LinkedIn Enabled
      *
      * Please specify if LinkedIn is enabled
      */
-    //'linkedIn_enabled' => true,
+    'linkedIn_enabled' => true,
 
     /**
      * Twitter Enabled
      *
      * Please specify if Twitter is enabled
      */
-    //'twitter_enabled' => true,
+    'twitter_enabled' => true,
 
     /**
      * Yahoo! Enabled
      *
      * Please specify if Yahoo! is enabled
      */
-    //'yahoo_enabled' => true,
+    'yahoo_enabled' => true,
 
     /**
      * tumblr Enabled
