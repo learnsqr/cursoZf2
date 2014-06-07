@@ -52,10 +52,20 @@ composer.lock
 
 # Configuration files #
 #######################
+vendor/
+public/vendor/
+config/development.config.php
+config/autoload/local.php
+config/autoload/*.local.php
+!public/vendor/README.md
+data/cache/*
+!data/cache/.gitkeep
+
+# More exclution files #
+#######################
 *.local.php
 TestConfig.php
 TestConfiguration.php
-config/development.config.php
 
 # Bower Public #
 ################
