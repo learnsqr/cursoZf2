@@ -47,6 +47,7 @@ else
 	$moddev=array();
 $modules=array_merge($modpro,$moddev);
 
+if(isset($_SERVER['APPLICATION_API']))
 if($_SERVER['APPLICATION_API']=='enable')
 	$modules=array_merge($modules,$api);
 
