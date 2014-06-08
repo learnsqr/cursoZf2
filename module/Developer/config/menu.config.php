@@ -9,10 +9,23 @@ return array(
     	    		'route' => 'developer',
     	    		'action' => 'index',
     	    ),
+    			
     			array(
     					'label' => 'Status',
     					'route' => 'status',
     					'action' => 'status',
+    			),
+    			array(
+    					'label' => 'Debug',
+    					'route' => 'debug',
+    					'action' => 'index',
+    					'pages' => array(
+    							array(
+    									'label' => 'All Routes',
+    									'route' => 'debug',
+    									'action' => 'allroutes',
+    							),
+    					),
     			),
 	    	array(
 	    		'label' => 'Docs',

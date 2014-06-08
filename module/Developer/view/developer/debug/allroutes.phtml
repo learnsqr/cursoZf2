@@ -1,0 +1,16 @@
+<div class="container bs-docs-container">
+    <div class="row">
+        
+<div class="panel">
+	<h3 class="panel-title"><?php echo $this->translate('All Routes') ?></h3>
+	<?php foreach ($this->routes as $routes): ?>
+	    <pre>
+	    <?php //print_r($routes); ?>
+	    </pre>
+	    <a href="<?php echo $routes['options']['route']; ?>"><?php echo $routes['options']['route']; ?></a>
+	    <br>
+	<?php endforeach; ?>
+</div>
+    </div>
+</div>
+

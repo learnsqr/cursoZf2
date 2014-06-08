@@ -1,18 +1,18 @@
 <strong>Module:</strong>        Developer &raquo;
-<strong>Controller:</strong>    Markdown &raquo;
+<strong>Controller:</strong>    Debug &raquo;
 <strong>Action:</strong>        index
 
 <br/>
 <br/>
 <div class="collapse navbar-collapse">
 <?php
+$internal = $this->navigation('navigation')->findOneByLabel('Debug');
     echo $this->navigation('navigation')
            ->menu()
            ->setMinDepth(2)
            ->setMaxDepth(2)
            ->setUlClass('nav nav-tabs')
-           ->setOnlyActiveBranch(true)
-           ->renderSubMenu();           
+           ->renderSubMenu(null, 'sidebar', 4);
  ?>  
 </div>
 

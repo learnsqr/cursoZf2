@@ -11,6 +11,7 @@ return array(
     'controllers' => array(
         'invokables' => array(
             'Developer\Controller\Index' => 'Developer\Controller\IndexController',
+        	'Developer\Controller\Debug' => 'Developer\Controller\DebugController',
             'Developer\Controller\Markdown' => 'Developer\Controller\MarkdownController'
         ),
     ),
@@ -26,7 +27,7 @@ return array(
         								'action'        => 'status',
         						),
         				),
-        		),
+        		),        		
             'developer' => array(
                 'type'    => 'Literal',
                 'options' => array(
@@ -53,6 +54,21 @@ return array(
                     ),
                 ),
             ),
+            'debug' => array(
+            		'type'    => 'Segment',
+            						'options' => array(
+            								'route'    => '/debug[/:action]',
+            								'constraints' => array(
+            										'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
+            										'action'     => '[a-zA-Z][a-zA-Z0-9_-]*',
+            								),
+            								'defaults' => array(
+				            						'controller' => 'Developer\Controller\Debug',
+				            						'action'     => 'index',
+				            				),
+            						),
+            ),
+        
             'markdown' => array(
             		'type'    => 'segment',
             		'options' => array(
