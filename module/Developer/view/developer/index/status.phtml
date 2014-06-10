@@ -7,10 +7,29 @@
 		<li>Zend Framework <strong>Last Version</strong>: <?=Zend\Version\Version::getLatest();?></li>
 		<li>Zend Framework <strong>Current Version</strong>: <?=Zend\Version\Version::VERSION;?></li>
 	</ul>
+	<br/>
+	
+	<h3 class="panel-title"><?php echo $this->translate('Cache Status') ?></h3>
+	<ul>
+		<li>APC <strong>apc.enabled</strong>: <?=var_dump(ini_get('apc.enabled'));?></li>
+		<li>EAccelerator <strong>eaccelerator.enable</strong>: <?=var_dump(ini_get('eaccelerator.enable'));?></li>
+		<li>OPCache <strong>xcache.cacher</strong>: <?=var_dump(ini_get('xcache.cacher'));?></li>
+		<li>WinCache <strong>wincache.ocenabled</strong>: <?=var_dump(ini_get('wincache.ocenabled'));?></li>
+		<li>XCache <strong>xcache.cacher</strong>: <?=var_dump(ini_get('xcache.cacher'));?></li>
+		<li>Zend Data Cache <strong>zend_datacache.apc_compatibility</strong>: <?=var_dump(ini_get('zend_datacache.apc_compatibility'));?></li>
+		<li>Zend Optimizer+ <strong>zend_optimizer.enable_loader</strong>: <?=var_dump(ini_get('zend_optimizer.enable_loader'));?></li>
+		<li>Cache variable <strong>opcache.enable</strong>: <?=var_dump(ini_get('opcache.enable'));?></li>
+	</ul>
+	<br/>
+	
+	<h3 class="panel-title"><?php echo $this->translate('Status Table') ?></h3>
+	<ul>
+		<?php foreach ($this->statuses as $status): ?>		    
+		    <li><strong><?php echo $status->timestamp;?>:</strong>: <?php echo $status->message . ' by ' . $status->user; ?></li>
+		<?php endforeach; ?>		
+	</ul>	
+	<br/>
+	
 </div>
     </div>
 </div>
-
-<?php foreach ($this->statuses as $status): ?>
-    <?php echo $status->message . ' by ' . $status->user; ?><br>
-<?php endforeach; ?>

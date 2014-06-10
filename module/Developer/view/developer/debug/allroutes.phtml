@@ -3,14 +3,51 @@
         
 <div class="panel">
 	<h3 class="panel-title"><?php echo $this->translate('All Routes') ?></h3>
-	<?php foreach ($this->routes as $routes): ?>
-	    <pre>
-	    <?php //print_r($routes); ?>
-	    </pre>
-	    <a href="<?php echo $routes['options']['route']; ?>"><?php echo $routes['options']['route']; ?></a>
-	    <br>
-	<?php endforeach; ?>
+	<?php 
+
+	getRoutes($this->routes);
+?>
+	<?php 
+	function getRoutes($routes, $link=null)
+	{
+		foreach ($routes as $route)
+		{
+			
+			echo "<div class=\"modal fade\" id=\"myModal-".str_replace(array("[","]","/",":"),array("-","-","-","-"),$route['options']['route'])."\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">
+						<div class=\"modal-dialog modal-lg\">
+				    <div class=\"modal-content\">
+				      <div class=\"modal-header\">
+				        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>
+				        <h4 class=\"modal-title\" id=\"myModalLabel\">".$route['options']['route']."</h4>
+				      </div>
+				      <div class=\"modal-body\">
+			";
+			echo "<pre>";
+			print_r($route);
+			echo "</pre>";
+			echo "
+				      </div>
+				      <div class=\"modal-footer\">
+				        <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+			";
+			
+			echo "<ul>";
+			echo "<li>";
+				echo "<a href=\"".$link.$route['options']['route']."\">".$route['options']['route']."</a>";
+				echo "&nbsp;&nbsp;&nbsp;&nbsp;";
+				echo "<a data-toggle=\"modal\" data-target=\"#myModal-".str_replace(array("[","]","/",":"),array("-","-","-","-"),$route['options']['route'])."\" href=\"#\">[Details]</a>";
+			echo "</li>";
+			
+				if(isset($route['child_routes']))
+					getRoutes($route['child_routes'], $link.$route['options']['route']);
+			echo "</ul>";
+		}
+	}
+	?>	
 </div>
     </div>
 </div>
-
