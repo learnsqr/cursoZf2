@@ -39,6 +39,11 @@ return array(
 	    	    				'params'     => array('filename' => 'do')
 	    	    		),
 	    	    		array(
+	    	    				'label' => 'Confs & Installs',
+	    	    				'route' => 'markdown',
+	    	    				'params'     => array('filename' => 'install-and-confs')
+	    	    		),
+	    	    		array(
 	    	    				'label' => 'Apigility',
 	    	    				'route' => 'markdown',
 	    	    				'params'     => array('filename' => 'apigility')
