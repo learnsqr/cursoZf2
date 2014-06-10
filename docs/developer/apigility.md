@@ -2,10 +2,10 @@
 
 ## Instalación del Apigility
 
-1. desde /path/to/install
-2. php composer.phar create-project -sdev zfcampus/zf-apigility-skeleton apig
-3. php public/index.php development enable
-3. php -S localhost:8000 -t public public/index.php
+    1. desde /path/to/install
+	2. php composer.phar create-project -sdev zfcampus/zf-apigility-skeleton apig
+	3. php public/index.php development enable
+	4. php -S localhost:8000 -t public public/index.php
 
 ## Trabajando con Apigility
 
@@ -98,8 +98,22 @@
 
 
 
+## Configurar opcache
+Aparece este mensaje al intentar abrir apigility en un proyecto  
+![Alt text](/assets/developer/opcache-warning.png "Opcache Warning")    
+1. Desabilitar directivas de cache en php-ini con:  
 
-
-
+	apc.enabled = 0;  
+    eaccelerator.enable = 0;  
+    opcache.enable = 0;  
+    wincache.ocenabled = 0;  
+    xcache.cacher = 0;  
+	zend_datacache.apc_compatibility = 0;  
+	zend_optimizerplus.enable = 0;  
+	zend_optimizer.enable_loader = 0  
+	zend_optimizer.optimization_level = 0  
+2. Desabilitar directivas de cache en virtual host:  
+ 
+	php_admin_value zend_optimizerplus.enable 0
 
  
