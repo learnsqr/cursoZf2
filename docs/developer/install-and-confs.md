@@ -20,3 +20,6 @@ The virtualhost with cache disabled
 		    Allow from all
 		</Directory>
 	</VirtualHost>
+
+## Composer 
+    php composer update
