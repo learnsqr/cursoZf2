@@ -23,3 +23,12 @@
     bower help
 
    ![Alt text](/assets/developer/bower.png "Bower help")
+   
+## Bower Update
+
+    sudo npm cache clean
+	npm update -g bower
+	
+### Checkpoint Charlie
+
+    bower -v

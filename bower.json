@@ -1,0 +1,10 @@
+{
+    "name": "cursozf2",
+    "version": "0.0.1",
+    "ignore": [
+        "**/.*"
+    ],
+    "dependencies": {
+        "bootstrap": ">=3.0.0"
+    }
+}
