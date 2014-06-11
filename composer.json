@@ -16,28 +16,28 @@
     ],
     "require": {
         "php": ">=5.3.3",
-        "zendframework/zendframework": "2.*",
-        
+        "zendframework/zendframework": "2.*",        
         
         "firephp/firephp-core" : "dev-master",
         "bjyoungblood/bjy-profiler": "dev-master",
         "zendframework/zend-developer-tools": "dev-master",
         "hybridauth/hybridauth": "2.2.*",        
-        "socalnick/scn-social-auth": "dev-master",
-        
+        "socalnick/scn-social-auth": "dev-master",        
         "bjyoungblood/bjy-authorize": "dev-master",
         "zendframework/zendoauth" : "=2.0.2",     
         "danielss89/zfc-user-admin" : "dev-master",
-        "michelf/php-markdown": "~1.4",
-        
+        "michelf/php-markdown": "~1.4",        
         
         "hrevert/ht-user-registration": "dev-master",
         "zfcampus/statuslib-example": "dev-master",
-        "zfcampus/zf-apigility": "~1.0@dev"
+        "zfcampus/zf-apigility": "~1.0@dev",
+        
+        "kriswallsmith/assetic": "~1.1.2"
         
     },
     "require-dev": {
         "zfcampus/zf-apigility-admin": "~1.0@dev",
-        "zfcampus/zf-development-mode": "~2.0"
+        "zfcampus/zf-development-mode": "~2.0",
+        "phpunit/phpunit": "~4.0"
     }
 }
