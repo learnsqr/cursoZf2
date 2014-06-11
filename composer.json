@@ -32,7 +32,8 @@
         "zfcampus/statuslib-example": "dev-master",
         "zfcampus/zf-apigility": "~1.0@dev",
         
-        "kriswallsmith/assetic": "~1.1.2"
+        "kriswallsmith/assetic": "~1.1.2",
+        "rwoverdijk/assetmanager": "1.*"
         
     },
     "require-dev": {
