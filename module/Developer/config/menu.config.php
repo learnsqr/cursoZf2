@@ -83,6 +83,11 @@ return array(
 	    	    				'route' => 'markdown',
 	    	    				'params'     => array('filename' => 'social')
 	    	    		),
+	    	    		array(
+	    	    				'label' => 'Bower',
+	    	    				'route' => 'markdown',
+	    	    				'params'     => array('filename' => 'bower')
+	    	    		),
 	    	    ),
 	    	),	    	
     	),
