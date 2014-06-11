@@ -8,6 +8,13 @@
  */
 
 return array(
+		'asset_manager' => array(
+				'resolver_configs' => array(
+						'paths' => array(
+								__DIR__ . '/../public',
+						),
+				),
+		),
     'controllers' => array(
         'invokables' => array(
             'Developer\Controller\Index' => 'Developer\Controller\IndexController',
