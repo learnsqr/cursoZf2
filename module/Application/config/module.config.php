@@ -8,6 +8,23 @@
  */
 
 return array(
+		'asset_manager' => array(
+				'resolver_configs' => array(
+						'paths' => array(
+								__DIR__ . '/../public',
+								__DIR__ . '/../public/vendor/bootstrap/dist',								
+						),
+						'map' => array(
+								'css/style.css' 		=> __DIR__ . '/../public/css/style.css',	
+								'js/respond.min.js' 	=> __DIR__ . '/../public/vendor/respond/dest/respond.min.js',
+								'js/html5shiv.js' 		=> __DIR__ . '/../public/vendor/html5shiv/dist/html5shiv.js',
+						),
+						'aliases' => array(
+								'js/' 					=> __DIR__ . '/../public/vendor/jquery/dist',
+						),
+				),
+		),
+	
     'router' => array(
         'routes' => array(
             'home' => array(
