@@ -1,0 +1,28 @@
+{
+  "name": "zf-apigility",
+  "version": "0.9.0dev",
+  "homepage": "http://apigility.org/",
+  "authors": [
+    "Matthew Weier O'Phinney <matthew@zend.com>"
+  ],
+  "description": "Apigility Admin UI",
+  "keywords": [
+    "API"
+  ],
+  "license": "BSD-3-Clause",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "dist",
+    "node_modules",
+    "bower_components",
+    "vendor",
+    "Gruntfile.js"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.1.1",
+    "jquery": "~2.1.1",
+    "respond": "~1.4.2",
+    "html5shiv": "~3.7.2"
+  }
+}

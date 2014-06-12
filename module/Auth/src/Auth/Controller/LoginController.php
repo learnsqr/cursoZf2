@@ -4,8 +4,7 @@ namespace Auth\Controller;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 use ZendOAuth\Consumer;
-use Zend\Http\Client as HTTPClient,
-ZendOAuth\OAuth;
+use Zend\Http\Client as HTTPClient,ZendOAuth\OAuth;
 
 
 use Auth\Form\LoginForm;       // <-- Add this import
@@ -21,13 +20,13 @@ class LoginController extends AbstractActionController
 		$form->get('submit')->setValue('Login');
 		$request = $this->getRequest();
 		if ($request->isPost()) {
-		  /* 
+		  
             $form->setData($request->getPost());
 			if ($form->isValid()) {
 			    // Redirect to list of albums
-                return $this->redirect()->toRoute('login');
+                return $this->redirect()->toRoute('album');
 			}
-		  */
+		  
 		}
 		return array('form' => $form);
 	}
@@ -36,7 +35,7 @@ class LoginController extends AbstractActionController
 	public function twitterAction()
 	{
 		$config = array(
-				'callbackUrl'       => 'http://zf2.local',
+				'callbackUrl'       => 'http://cursozf2.local',
 				'consumerKey'       => '6m5PRdgc8L34OHt0jl7XQ',
 				'consumerSecret'    => 'MbrgvIa7AQRCkNaHToKGdyIfuBPlhUVKKN2fo7k',
 				'siteUrl'           => 'https://api.twitter.com/oauth',
