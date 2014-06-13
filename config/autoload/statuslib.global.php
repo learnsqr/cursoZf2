@@ -5,19 +5,25 @@
  */
 
 return array(
-    'statuslib' => array(
-    	'db' => 'Zend\Db\Adapter\Adapter',
-    	'table' => 'status',
-        //'array_mapper_path' => 'path/to/PHP/file/returning/array.php',
-    ),
-    'service_manager' => array(
-        'aliases' => array(
-        	// Set to either 
-        	'StatusLib\Mapper' => 'StatusLib\TableGatewayMapper',
-        	//'StatusLib\Mapper' => 'StatusLib\ArrayMapper',
-        ),
-        'abstract_factories' => array(
-    		'Zend\Db\Adapter\Adapter' => 'Zend\Db\Adapter\AdapterAbstractServiceFactory',
-    	)
-    ),
+
+		'db' => array(
+				'adapters' => array(
+						'MyDb' => array(
+								'driver' => 'pdo_sqlite',
+								'database' => __DIR__ . '/../../data/statuslib.db'
+						)
+				)
+		),
+		'statuslib' => array(
+				'db' => 'MyDb',
+				'table' => 'status',
+		),
+		'service_manager' => array(
+				'aliases' => array(
+						'StatusLib\Mapper' => 'StatusLib\TableGatewayMapper',
+				),
+				'abstract_factories' => array(
+						'Zend\Db\Adapter\Adapter' => 'Zend\Db\Adapter\AdapterAbstractServiceFactory',
+				)
+		),
 );
