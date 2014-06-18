@@ -24,10 +24,10 @@ return array(
     ),
     'router' => array(
         'routes' => array(   
-        		'status' => array(
+        		'infostatus' => array(
         				'type'    => 'Literal',
         				'options' => array(
-        						'route'    => '/status',
+        						'route'    => '/infostatus',
         						'defaults' => array(
         								'__NAMESPACE__' => 'Developer\Controller',
         								'controller'    => 'Index',

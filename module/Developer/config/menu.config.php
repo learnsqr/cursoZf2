@@ -12,7 +12,7 @@ return array(
     			
     			array(
     					'label' => 'Status',
-    					'route' => 'status',
+    					'route' => 'infostatus',
     					'action' => 'status',
     			),
     			array(
@@ -87,6 +87,18 @@ return array(
 	    	    				'label' => 'Bower',
 	    	    				'route' => 'markdown',
 	    	    				'params'     => array('filename' => 'bower')
+	    	    		),
+	    	    		array(
+	    	    				'label' => 'Api',
+	    	    				'route' => 'markdown',
+	    	    				'params'     => array('filename' => 'api'),
+	    	    				'pages' => array(
+	    	    						array(
+	    	    								'label' => 'Api Considerations',
+	    	    								'route' => 'markdown',
+	    	    								'params'     => array('filename' => 'api-considerations')
+	    	    						),
+	    	    				),
 	    	    		),
 	    	    ),
 	    	),	    	

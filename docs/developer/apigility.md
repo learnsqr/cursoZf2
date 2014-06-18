@@ -37,83 +37,153 @@
 
 ## GET y Authorization
 
-1. Crear una nueva version (o continuar con la siguiente)
-2. Usar Authorization, autorizar el method POST para Entity y para Collection
-3. Probar GET nuevamente. 
-4. Mirar que version se esta atacando por defecto. 
-5. Para atacar una version diferente a la default, usar: localhost:8000/v4/albumrest
-6. Tambien se puede usar Accept application/vnd.albumrest.v4+json
-7. Como hemos puesto en Authorization el GET retorna un error 403 Forbidden
+	1. Crear una nueva version (o continuar con la siguiente)
+	2. Usar Authorization, autorizar el method POST para Entity y para Collection
+	3. Probar GET nuevamente. 
+	4. Mirar que version se esta atacando por defecto. 
+	5. Para atacar una version diferente a la default, usar: localhost:8000/v4/albumrest
+	6. Tambien se puede usar Accept application/vnd.albumrest.v4+json
+	7. Como hemos puesto en Authorization el GET retorna un error 403 Forbidden
 
 ## Definir Authentication
 
-0. Verificar la base de datos que vamos a usar. 
-0.1. Debe tener la estructura de datos para almacenar autenticacion oauth.
-0.2. Sino, crearla. Ver [https://github.com/zfcampus/zf-oauth2]
-0.3. Llenar oauth_clients
+	0. Verificar la base de datos que vamos a usar.   
+	0.1. Debe tener la estructura de datos para almacenar autenticacion oauth.  
+	0.2. Sino, crearla. Ver [https://github.com/zfcampus/zf-oauth2]  
+	0.3. Llenar oauth_clients  
 
-1. Seleccionar OAuth2
-2. Seleccionar PDO
-3. DSN para Mysql: mysql:dbname=zf2;host=localhost
-4. Rellenar usuario y contraseña
-5. Rellenar route para autenticación /oauth
-6. Ir al endpoint localhost:8000/oauth
-7. Llamar via POST con los datos de usuario/contraseña en Accept application/json y Content-Type application/json
-8. {"username":"testclient",
-	 "password":"testpass",
-	 "grant_type":"password",
-	 "client_id": "testclient",
-     "client_secret":"testpass"
-	}
-9. que obtiene
+	1. Seleccionar OAuth2
+	2. Seleccionar PDO
+	3. DSN para Mysql: mysql:dbname=zf2;host=localhost
+	4. Rellenar usuario y contraseña
+	5. Rellenar route para autenticación /oauth
+	6. Ir al endpoint localhost:8000/oauth
+	7. Llamar via POST con los datos de usuario/contraseña en Accept application/json y Content-Type application/json
+	8. {"username":"testclient",
+		 "password":"testpass",
+		 "grant_type":"password",
+		 "client_id": "testclient",
+	     "client_secret":"testpass"
+		}
+	9. que obtiene
+		{
+		    "access_token": "b99d9995c425097afe5d488cd1e67e1c2a2ba95f",
+		    "expires_in": 3600,
+		    "token_type": "Bearer",
+		    "scope": null,
+		    "refresh_token": "36995417725ff744bdbe287b48fac8fb8e16b47e"
+		}
+	10. O este funciona!!! 
+		{ 
+		 "grant_type":"client_credentials",
+		 "client_id":"testclient",
+		 "client_secret":"testpass"
+		}
+	11.que obtiene
+		{
+		    "access_token": "1af85611751764f4eba99cda8791cd3936f94f06",
+		    "expires_in": 3600,
+		    "token_type": "Bearer",
+		    "scope": null
+		}
+	12. Entonces hacer la llamada GET con el token Accept: application/vnd.albumrest.v4+json y Authorization: Bearer 7ffc325852a11b5f36633f395fc82c311b382e47
+	13. La salida es la llamada GET de antes.
+	14. Si el token esta mal sale 
+		{
+		    "type": "http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html",
+		    "title": "Forbidden",
+		    "status": 403,
+		    "detail": "Forbidden"
+		}
+
+## Llamadas de authentication
+### REQUEST TOKEN (client_credentials)
+#### Request
+	POST /oauth HTTP/1.1
+	Host: cursozf2.local
+	Accept: application/vnd.status.v2+json
+	Content-Type: application/json
+	Cache-Control: no-cache
 	{
-	    "access_token": "b99d9995c425097afe5d488cd1e67e1c2a2ba95f",
+		"grant_type":"client_credentials",
+		"client_id":"testclient",
+		"client_secret":"testpass"  
+	}
+#### Response
+	{
+		access_token: "2907219127ae165b56b058c09be37643764c9e9c"
+		expires_in: 3600
+		token_type: "Bearer"
+		scope: null
+	}
+	
+### AUTHORIZE (code)
+	Visit the URL to request authorization for the client.
+	http://cursozf2.local/oauth/authorize?response_type=code&client_id=testclient&redirect_uri=/oauth/receivecode&state=xyz
+	
+	
+	
+![Alt text](/assets/developer/authorize-screen.png "Authorize screen")    
+![Alt text](/assets/developer/athorizationcode-screen.png "athorization code screen") 
+
+To enable the module to accept the implicit grant type, you need to change the configuration of allow_implicit to true in the config/autoload/oauth2.local.php file:  
+
+	return array(
+		'zf-oauth2' => array(
+			// ...
+			'allow_implicit' => true,
+			// ...
+		),
+	);
+	
+To request a token from the client side, you need to request authorization via the OAuth2 server:  
+	
+	http://cursozf2.local/oauth/authorize?response_type=token&client_id=testclient&redirect_uri=/oauth/receivecode&state=xyz
+
+![Alt text](/assets/developer/accesstoken-screen.png "access token screen") 
+
+#### Access test rosource
+	http://cursozf2.local/oauth/resource?access_token=e34ec6010ae81b8d2090512d5c88d5347f014efc
+	{
+		"success":true,
+		"message":"You accessed my APIs!"
+	}
+	
+### AUTHORIZE (code) -- using http client
+
+#### Request -- Ask for a Token
+	POST /oauth HTTP/1.1
+	Host: cursozf2.local
+	Accept: application/vnd.status.v2+json
+	Content-Type: application/json
+	Cache-Control: no-cache
+	{
+		"grant_type":"authorization_code",
+		"client_id":"testclient",
+		"client_secret":"testpass" ,
+		"code":"43a1ae4aa51019d69d85d026577469dadb5ddcc6",
+		"redirect_uri":"/oauth/receivecode"
+	}
+#### Response
+	{
+	    "access_token": "9ef5829a956b94c83e92924ac02b299a08a770af",
 	    "expires_in": 3600,
 	    "token_type": "Bearer",
 	    "scope": null,
-	    "refresh_token": "36995417725ff744bdbe287b48fac8fb8e16b47e"
+	    "refresh_token": "aacbe40f4cf78960c2da7a845755704962068192"
 	}
-10. O este funciona!!! 
-	{ 
-	 "grant_type":"client_credentials",
-	 "client_id":"testclient",
-	 "client_secret":"testpass"
-	}
-11.que obtiene
+
+### Protect API
+for instance, at the top of a controller, where $this->server is an instance of OAuth2\Server  
+
+	if (!$this->server->verifyResourceRequest(OAuth2Request::createFromGlobals())) 
 	{
-	    "access_token": "1af85611751764f4eba99cda8791cd3936f94f06",
-	    "expires_in": 3600,
-	    "token_type": "Bearer",
-	    "scope": null
-	}
-12. Entonces hacer la llamada GET con el token Accept: application/vnd.albumrest.v4+json y Authorization: Bearer 7ffc325852a11b5f36633f395fc82c311b382e47
-13. La salida es la llamada GET de antes.
-14. Si el token esta mal sale 
-	{
-	    "type": "http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html",
-	    "title": "Forbidden",
-	    "status": 403,
-	    "detail": "Forbidden"
+	    // Not authorized return 401 error
+	    $this->getResponse()->setStatusCode(401);
+	    return;
 	}
 
 
 
-## Configurar opcache
-Aparece este mensaje al intentar abrir apigility en un proyecto  
-![Alt text](/assets/developer/opcache-warning.png "Opcache Warning")    
-1. Desabilitar directivas de cache en php-ini con:  
-
-	apc.enabled = 0;  
-    eaccelerator.enable = 0;  
-    opcache.enable = 0;  
-    wincache.ocenabled = 0;  
-    xcache.cacher = 0;  
-	zend_datacache.apc_compatibility = 0;  
-	zend_optimizerplus.enable = 0;  
-	zend_optimizer.enable_loader = 0  
-	zend_optimizer.optimization_level = 0  
-2. Desabilitar directivas de cache en virtual host:  
- 
-	php_admin_value zend_optimizerplus.enable 0
 
  
