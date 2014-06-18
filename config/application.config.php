@@ -24,8 +24,8 @@ return array(
         'StatusLib',
         'ZF\\Apigility',
         'ZF\\Apigility\\Provider',
-    		'ZF\\Apigility\\Documentation',
-    		'ZF\\Apigility\\Documentation\\Swagger',
+        'ZF\\Apigility\\Documentation',
+        'ZF\\Apigility\\Documentation\\Swagger',
         'ZF\\ApiProblem',
         'ZF\\MvcAuth',
         'ZF\\OAuth2',
@@ -36,7 +36,8 @@ return array(
         'ZF\\Rpc',
         'ZF\\Versioning',
         'ZF\\DevelopmentMode',
-        'Status'
+        'Status',
+        'Music'
     ),
     'module_listener_options' => array(
         'module_paths' => array(
