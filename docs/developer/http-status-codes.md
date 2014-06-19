@@ -24,6 +24,7 @@ Server Error    5xx
 206 Partial Content (+ range header)  
 \--------------------------------------------  
 207 Multi-Status (WebDAV) (RFC 4918)  
+208 Already Reported
 226 IM Used (RFC 3229)  
 \--------------------------------------------  
 300 Multiple Choices  
@@ -79,6 +80,7 @@ Server Error    5xx
 \--------------------------------------------  
 506 Variant Also Negotiates (RFC 2295)  
 507 Insufficient Storage (WebDAV)(RFC 4918)  
+508 Loop Detected
 509 Bandwidth Limit Exceeded (Apache)  
 510 Not Extended (RFC 2774)  
 511 Network Authentication Required  (RFC 2616 pending)  
