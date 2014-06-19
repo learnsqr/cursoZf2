@@ -4,7 +4,8 @@ return array(
 				'invokables' => array(
 						'Album\Controller\Album' 		=> 'Album\Controller\AlbumController',
 						'Album\Controller\AlbumRest' 	=> 'Album\Controller\AlbumRestController',
-						'Album\Controller\AlbumClient' 	=> 'Album\Controller\AlbumClientController',
+						'Album\Controller\AlbumClient' 		=> 'Album\Controller\AlbumClientController',
+						'Album\Controller\AlbumApigility' 	=> 'Album\Controller\AlbumApigilityController',
 				),
 		),
 
@@ -48,6 +49,20 @@ return array(
 										'defaults' => array(
 											'controller' => 'Album\Controller\AlbumClient',
 											'action'     => 'index',
+										),
+								),
+						),
+						'albumapigility' => array(
+								'type'    => 'segment',
+								'options' => array(
+										'route'    => '/album-apigility[/][:action][/:id]',
+										'constraints' => array(
+												'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+												'id'     => '[0-9]+',
+										),
+										'defaults' => array(
+												'controller' => 'Album\Controller\AlbumApigility',
+												'action'     => 'index',
 										),
 								),
 						),
