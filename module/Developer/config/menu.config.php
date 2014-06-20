@@ -89,6 +89,18 @@ return array(
 	    	    				'params'     => array('filename' => 'bower')
 	    	    		),
 	    	    		array(
+	    	    				'label' => 'Code',
+	    	    				'route' => 'markdown',
+	    	    				'params'     => array('filename' => 'views'),
+	    	    				'pages' => array(
+	    	    						array(
+	    	    								'label' => 'Views',
+	    	    								'route' => 'markdown',
+	    	    								'params'     => array('filename' => 'views')
+	    	    						),
+	    	    				),
+	    	    		),
+	    	    		array(
 	    	    				'label' => 'Api',
 	    	    				'route' => 'markdown',
 	    	    				'params'     => array('filename' => 'api'),
