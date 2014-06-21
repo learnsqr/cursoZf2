@@ -6,7 +6,7 @@
  */
 return array(
     'modules' => array(
-        'Application',
+        
         'ZfcBase',
         'ZfcAdmin',
         'ZfcUser',
@@ -37,7 +37,8 @@ return array(
         'ZF\\Versioning',
         'ZF\\DevelopmentMode',
         'Status',
-        'Music'
+        'Music',
+    		'Application',
     ),
     'module_listener_options' => array(
         'module_paths' => array(
