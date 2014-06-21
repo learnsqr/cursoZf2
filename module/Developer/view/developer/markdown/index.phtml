@@ -5,15 +5,13 @@
 <br/>
 <br/>
 <div class="collapse navbar-collapse">
-<?php
-    echo $this->navigation('navigation')
-           ->menu()
-           ->setMinDepth(2)
-           ->setMaxDepth(2)
-           ->setUlClass('nav nav-tabs')
-           ->setOnlyActiveBranch(true)
-           ->renderSubMenu();           
- ?>  
+	<h1>Index of documents</h1>	 
+	<?php 
+		echo $this->navigation('navigation')
+			->menu()
+	        ->setMinDepth(2)
+	        ->setUlClass('nav navbar-nav');
+	?>  
 </div>
 
 <div class="container">

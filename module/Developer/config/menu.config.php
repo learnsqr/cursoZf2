@@ -34,60 +34,75 @@ return array(
 	    	    'order' => 100,
 	    	    'pages' => array(
 	    	    		array(
-	    	    				'label' => 'Do',
+	    	    				'label' => 'About this',
 	    	    				'route' => 'markdown',
-	    	    				'params'     => array('filename' => 'do')
+	    	    				'params'     => array('filename' => 'do'),
+	    	    				'pages' => array(
+	    	    						array(
+					    	    				'label' => 'Markdown Syntax',
+					    	    				'route' => 'markdown',
+					    	    				'params'     => array('filename' => 'markdown-syntax')
+					    	    		),	    	    				
+	    	    				),
 	    	    		),
 	    	    		array(
 	    	    				'label' => 'Confs & Installs',
 	    	    				'route' => 'markdown',
-	    	    				'params'     => array('filename' => 'install-and-confs')
+	    	    				'params'     => array('filename' => 'install-and-confs'),
+	    	    				'pages' => array(
+	    	    						array(
+					    	    				'label' => 'Social',
+					    	    				'route' => 'markdown',
+					    	    				'params'     => array('filename' => 'social')
+					    	    		),
+					    	    		array(
+					    	    				'label' => 'Bower',
+					    	    				'route' => 'markdown',
+					    	    				'params'     => array('filename' => 'bower')
+					    	    		),
+	    	    						array(
+	    	    								'label' => 'Erratas',
+	    	    								'route' => 'markdown',
+	    	    								'params'     => array('filename' => 'erratas')
+	    	    						),
+	    	    						array(
+	    	    								'label' => 'Apigility',
+	    	    								'route' => 'markdown',
+	    	    								'params'     => array('filename' => 'apigility')
+	    	    						),
+	    	    						
+	    	    				),
 	    	    		),
+	    	    		
+    	    	        
 	    	    		array(
-	    	    				'label' => 'Apigility',
+	    	    				'label' => 'Web Theory',
 	    	    				'route' => 'markdown',
-	    	    				'params'     => array('filename' => 'apigility')
+	    	    				'params'     => array('filename' => 'http-status-codes'),
+	    	    				'pages' => array(
+	    	    						array(
+	    	    								'label' => 'HTTP status codes',
+	    	    								'route' => 'markdown',
+	    	    								'params'     => array('filename' => 'http-status-codes')
+	    	    						),
+	    	    						array(
+	    	    								'label' => 'Ful Mapper',
+	    	    								'route' => 'markdown',
+	    	    								'params'     => array('filename' => 'fulmapper')
+	    	    						),
+	    	    						
+	    	    				
+	    	    				),
 	    	    		),
-    	    	        array(
-    	    	        		'label' => 'Ful Mapper',
-    	    	        		'route' => 'markdown',
-    	    	        		'params'     => array('filename' => 'fulmapper')
-	    	          ),
-	    	    		array(
-	    	    				'label' => 'HTTP status codes',
-	    	    				'route' => 'markdown',
-	    	    				'params'     => array('filename' => 'http-status-codes')
-	    	    		),
-	    	    		array(
-	    	    				'label' => 'Markdown Syntax',
-	    	    				'route' => 'markdown',
-	    	    				'params'     => array('filename' => 'markdown-syntax')
-	    	    		),
-	    	    		array(
-	    	    				'label' => 'Erratas',
-	    	    				'route' => 'markdown',
-	    	    				'params'     => array('filename' => 'erratas')
-	    	    		),
-	    	    		array(
-	    	    				'label' => 'Services',
-	    	    				'route' => 'markdown',
-	    	    				'params'     => array('filename' => 'services')
-	    	    		),	    	    		
+	    	    		
+	    	    		
+	    	    			    	    		
 	    	    		array(
 	    	    				'label' => 'Wordpress',
 	    	    				'route' => 'markdown',
 	    	    				'params'     => array('filename' => 'wordpress')
 	    	    		),
-	    	    		array(
-	    	    				'label' => 'Social',
-	    	    				'route' => 'markdown',
-	    	    				'params'     => array('filename' => 'social')
-	    	    		),
-	    	    		array(
-	    	    				'label' => 'Bower',
-	    	    				'route' => 'markdown',
-	    	    				'params'     => array('filename' => 'bower')
-	    	    		),
+	    	    		
 	    	    		array(
 	    	    				'label' => 'Code',
 	    	    				'route' => 'markdown',
@@ -97,6 +112,16 @@ return array(
 	    	    								'label' => 'Views',
 	    	    								'route' => 'markdown',
 	    	    								'params'     => array('filename' => 'views')
+	    	    						),
+	    	    						array(
+	    	    								'label' => 'Config Listers',
+	    	    								'route' => 'markdown',
+	    	    								'params'     => array('filename' => 'config-listeners')
+	    	    						),
+	    	    						array(
+	    	    								'label' => 'Services',
+	    	    								'route' => 'markdown',
+	    	    								'params'     => array('filename' => 'services')
 	    	    						),
 	    	    				),
 	    	    		),
@@ -109,7 +134,7 @@ return array(
 	    	    								'label' => 'Api Considerations',
 	    	    								'route' => 'markdown',
 	    	    								'params'     => array('filename' => 'api-considerations')
-	    	    						),
+	    	    						),	    	    						
 	    	    				),
 	    	    		),
 	    	    ),
