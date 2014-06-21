@@ -1,6 +1,7 @@
 # Interesting View's scripts
-REF:     
-<sup>1</sup> Allen, Rob. __"ZF2 Test Application."__ _Github.com Repo: akrabat/ZF2TestApp_, 19 May 2012. Web [akrabat/ZF2TestApp](https://github.com/akrabat/ZF2TestApp/blob/master/module/Application/src/Application/Controller/ViewController.php). Accessed 20 Jun 2014.
+REF:  
+   
+* <sup>1</sup> Allen, Rob. __"ZF2 Test Application."__ _Github.com Repo: akrabat/ZF2TestApp_, 19 May 2012. Web [akrabat/ZF2TestApp](https://github.com/akrabat/ZF2TestApp/blob/master/module/Application/src/Application/Controller/ViewController.php). Accessed 20 Jun 2014.
 
 	<?php
 

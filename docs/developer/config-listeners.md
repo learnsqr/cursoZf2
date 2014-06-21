@@ -1,6 +1,7 @@
 # About Config Listeners and loading priority
 REF:     
-<sup>1</sup> Minds, Sam. __"Understanding ZF2 Configuration."__ _Sam Minds: Some Zend Framework 2 knowledge_, 08 Abr 2014. Web [Understanding ZF2 Configuration](http://samminds.com/2013/04/understanding-zf2-configuration/). Accessed 20 Jun 2014.
+
+* <sup>1</sup> Minds, Sam. __"Understanding ZF2 Configuration."__ _Sam Minds: Some Zend Framework 2 knowledge_, 08 Abr 2014. Web [Understanding ZF2 Configuration](http://samminds.com/2013/04/understanding-zf2-configuration/). Accessed 20 Jun 2014.
 
 ## The ConfigListener
 

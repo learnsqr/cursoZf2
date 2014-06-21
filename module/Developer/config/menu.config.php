@@ -104,10 +104,15 @@ return array(
 	    	    		),
 	    	    		
 	    	    		array(
-	    	    				'label' => 'Code',
+	    	    				'label' => 'ZF2 Theory & Code',
 	    	    				'route' => 'markdown',
 	    	    				'params'     => array('filename' => 'views'),
 	    	    				'pages' => array(
+	    	    						array(
+	    	    								'label' => 'Dispatch Process',
+	    	    								'route' => 'markdown',
+	    	    								'params'     => array('filename' => 'dispatch')
+	    	    						),
 	    	    						array(
 	    	    								'label' => 'Views',
 	    	    								'route' => 'markdown',
@@ -122,6 +127,11 @@ return array(
 	    	    								'label' => 'Services',
 	    	    								'route' => 'markdown',
 	    	    								'params'     => array('filename' => 'services')
+	    	    						),
+	    	    						array(
+	    	    								'label' => 'Dependencies',
+	    	    								'route' => 'markdown',
+	    	    								'params'     => array('filename' => 'dependencies')
 	    	    						),
 	    	    				),
 	    	    		),
