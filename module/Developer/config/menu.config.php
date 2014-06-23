@@ -133,6 +133,11 @@ return array(
 	    	    								'route' => 'markdown',
 	    	    								'params'     => array('filename' => 'dependencies')
 	    	    						),
+	    	    						array(
+	    	    								'label' => 'Sevice Locator',
+	    	    								'route' => 'markdown',
+	    	    								'params'     => array('filename' => 'servicelocator')
+	    	    						),
 	    	    				),
 	    	    		),
 	    	    		array(
