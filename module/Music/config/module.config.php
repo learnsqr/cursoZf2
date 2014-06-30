@@ -19,9 +19,8 @@ return array(
         ),
     ),
     'service_manager' => array(
-        'factories' => array(
-            //'Music\\V1\\Rest\\Album\\AlbumResource' => 'Music\\V1\\Rest\\Album\\AlbumResourceFactory',
-        ),
+        'factories' => array(),
+        'invokables' => array(),
     ),
     'zf-rest' => array(
         'Music\\V1\\Rest\\Album\\Controller' => array(
@@ -78,6 +77,61 @@ return array(
                 'route_name' => 'music.rest.album',
                 'route_identifier_name' => 'album_id',
                 'is_collection' => true,
+            ),
+        ),
+    ),
+    'zf-content-validation' => array(
+        'Music\\V1\\Rest\\Album\\Controller' => array(
+            'input_filter' => 'Music\\V1\\Rest\\Album\\Validator',
+        ),
+    ),
+    'input_filter_specs' => array(
+        'Music\\V1\\Rest\\Album\\Validator' => array(
+            0 => array(
+                'name' => 'title',
+                'required' => true,
+                'filters' => array(
+                    0 => array(
+                        'name' => 'Zend\\Filter\\StringTrim',
+                        'options' => array(),
+                    ),
+                    1 => array(
+                        'name' => 'Zend\\Filter\\StripTags',
+                        'options' => array(),
+                    ),
+                ),
+                'validators' => array(
+                    0 => array(
+                        'name' => 'Zend\\Validator\\StringLength',
+                        'options' => array(
+                            'max' => '100',
+                        ),
+                    ),
+                ),
+                'description' => 'Title of this album',
+            ),
+            1 => array(
+                'name' => 'artist',
+                'required' => true,
+                'filters' => array(
+                    0 => array(
+                        'name' => 'Zend\\Filter\\StringTrim',
+                        'options' => array(),
+                    ),
+                    1 => array(
+                        'name' => 'Zend\\Filter\\StripTags',
+                        'options' => array(),
+                    ),
+                ),
+                'validators' => array(
+                    0 => array(
+                        'name' => 'Zend\\Validator\\StringLength',
+                        'options' => array(
+                            'max' => '100',
+                        ),
+                    ),
+                ),
+                'description' => 'Artist who made this album!',
             ),
         ),
     ),

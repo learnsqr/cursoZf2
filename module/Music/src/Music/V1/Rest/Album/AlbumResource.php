@@ -21,7 +21,7 @@ class AlbumResource extends AbstractResourceListener
      */
     public function create($data)
     {
-        return new ApiProblem(405, 'The POST method has not been defined');
+        return $this->mapper->save($data);
     }
 
     /**
@@ -32,7 +32,7 @@ class AlbumResource extends AbstractResourceListener
      */
     public function delete($id)
     {
-        return new ApiProblem(405, 'The DELETE method has not been defined for individual resources');
+        return $this->mapper->delete($id);
     }
 
     /**
@@ -65,7 +65,7 @@ class AlbumResource extends AbstractResourceListener
      */
     public function fetchAll($params = array())
     {
-        return $this->mapper->fetchAll();
+        return $this->mapper->fetchAll($params);
     }
 
     /**
@@ -100,6 +100,6 @@ class AlbumResource extends AbstractResourceListener
      */
     public function update($id, $data)
     {
-        return new ApiProblem(405, 'The PUT method has not been defined for individual resources');
+        return $this->mapper->save($data, $id);
     }
 }
