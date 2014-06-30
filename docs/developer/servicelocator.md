@@ -4,6 +4,10 @@ REF:
  
 * <sup>1</sup> Weier O'Phinney, Matthew. __"ServiceLocator in Model classes."__ _Zend Framework Community, Nabble.com_, 17 Sep 2012. Web [ServiceLocator in Model classes](http://zend-framework-community.634137.n4.nabble.com/ServiceLocator-in-Model-classes-td4656863.html). Accessed 23 Jun 2014.
 
+## Be aware of this discussion
+
+[Remove ServiceLocatorAwareInterface from AbstractController](https://github.com/zendframework/zf2/issues/5168)
+ 
 
 ## Into Services
 

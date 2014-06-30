@@ -138,6 +138,21 @@ return array(
 	    	    								'route' => 'markdown',
 	    	    								'params'     => array('filename' => 'servicelocator')
 	    	    						),
+	    	    						array(
+	    	    								'label' => 'Post Redirect Get',
+	    	    								'route' => 'markdown',
+	    	    								'params'     => array('filename' => 'postredirectget')
+	    	    						),
+	    	    						array(
+	    	    								'label' => 'Hydrators',
+	    	    								'route' => 'markdown',
+	    	    								'params'     => array('filename' => 'hydrators')
+	    	    						),
+	    	    						array(
+	    	    								'label' => 'Logs',
+	    	    								'route' => 'markdown',
+	    	    								'params'     => array('filename' => 'logs')
+	    	    						),
 	    	    				),
 	    	    		),
 	    	    		array(
