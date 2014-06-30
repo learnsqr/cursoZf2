@@ -1,14 +1,18 @@
 <?php
 return array(
+// 		'album'=> array('default_name' => 'default confisssg value'),
 		'controllers' => array(
+				// The controller classes which do not have any dependencies
 				'invokables' => array(
-						'Album\Controller\Album' 		=> 'Album\Controller\AlbumController',
-						'Album\Controller\AlbumRest' 	=> 'Album\Controller\AlbumRestController',
+						'Album\Controller\Album' 			=> 'Album\Controller\AlbumController',
+						'Album\Controller\AlbumRest' 		=> 'Album\Controller\AlbumRestController',
 						'Album\Controller\AlbumClient' 		=> 'Album\Controller\AlbumClientController',
 						'Album\Controller\AlbumApigility' 	=> 'Album\Controller\AlbumApigilityController',
 				),
+				// The controller instances which do have dependencies
+				// 'factories' => array(
+				// ),
 		),
-
 		// The following section is new and should be added to your file
 		'router' => array(
 				'routes' => array(

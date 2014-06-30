@@ -27,6 +27,26 @@ class Module
         return include __DIR__ . '/config/module.config.php';
     }
     
+//     public function getControllerConfig() {
+//     	return array(
+//     			'factories' => array(
+//     					'commentController' => function ($sm) {
+//     						$controller = new \Comment\Controller\CommentController();
+//     						$locator = $sm->getServiceLocator();
+//     						$controller->setCommentForm($locator->get('commentForm'));
+//     						$controller->setCommentService($locator->get('commentService'));
+//     						return $controller;
+//     					},
+//     					'Album\Controller\AlbumApigilityController' => function ($sm) {
+// 	    					$controller = new \Album\Controller\AlbumApigilityController();
+// 	    					$locator = $sm->getServiceLocator();
+// 	    					$controller->setAlbumService($locator->get('Album\Service\AlbumService'));
+// 	    					return $controller;
+//     					}
+//     			)
+//     	);
+//     }
+    
     public function getServiceConfig()
     {
     	return array(
@@ -42,7 +62,24 @@ class Module
     						$resultSetPrototype->setArrayObjectPrototype(new Album());
     						return new TableGateway('album', $dbAdapter, null, $resultSetPrototype);
     					},
+    					'Album\Model\AlbumMapper' => function ($sm) {
+    						$dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
+    						$adapterMaster 	= $sm->get('dbMasterAdapter');
+    						$adapterSlave 	= $sm->get('dbSlaveAdapter');
+    						$mapper = new \Album\Model\AlbumMapper($adapterMaster, $adapterSlave);
+    						return $mapper;
+    					},  
+    					
+    					'Album\Service\AlbumOptions' => function ($sm) {
+    						$config = $sm->get('Config');
+    						return new \Album\Service\AlbumOptions(isset($config['album']) ? $config['album'] : array());
+    					},
+    					
+    					'Album\Form\AlbumForm' 			=> 'Album\Form\AlbumFormFactory',
+    					'Album\Service\AlbumService' 	=> 'Album\Service\AlbumServiceFactory',    					
     			),
     	);
     }
+    
+   
 }

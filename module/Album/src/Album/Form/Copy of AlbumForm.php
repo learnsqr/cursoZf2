@@ -5,13 +5,11 @@ use Zend\Form\Form;
 
 class AlbumForm extends Form
 {
-    public function __construct($name = null, $options = array())
+    public function __construct($name = null)
     {
-
-        parent::__construct($name, $options);
-        
+        // we want to ignore the name passed
+        parent::__construct('album');
         $this->setAttribute('method', 'post');
-        
         $this->add(array(
             'name' => 'id',
             'attributes' => array(
@@ -42,7 +40,6 @@ class AlbumForm extends Form
                 'type'  => 'submit',
                 'value' => 'Go',
                 'id' => 'submitbutton',
-            	'ignore' => true
             ),
         ));
     }

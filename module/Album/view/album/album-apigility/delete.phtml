@@ -1,0 +1,34 @@
+<?php
+// module/Album/view/album/album/edit.phtml:
+
+$title = 'Delete album';
+$this->headTitle($title);
+?>
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+<?php 
+$flash = $this->flashMessenger();
+if (isset($flash)) : 
+	echo $flash->render('error',   array('alert', 'alert-dismissable', 'alert-danger'));
+	echo $flash->render('info',    array('alert', 'alert-dismissable', 'alert-info'));
+	echo $flash->render('default', array('alert', 'alert-dismissable', 'alert-warning'));
+	echo $flash->render('success', array('alert', 'alert-dismissable', 'alert-success'));
+endif;
+?>
+
+<?php
+$form = $this->form;
+$form->setAttribute('action', $this->url(
+    'albumapigility',
+    array(
+        'action' => 'delete',
+        'id'     => $this->id,
+    )
+));
+$form->prepare();
+
+echo $this->form()->openTag($form);
+echo $this->formHidden($form->get('id'));
+echo $this->formRow($form->get('title'));
+echo $this->formRow($form->get('artist'));
+echo $this->formSubmit($form->get('submit'));
+echo $this->form()->closeTag();

@@ -1,0 +1,55 @@
+<?php
+/**
+ * Album Configuration
+ *
+ * If you have a ./config/autoload/ directory set up for your project, you can
+ * drop this config file in it and change the values as you wish.
+ */
+$settings = array(
+	/**
+     * User table name
+     */
+//    'default_name' => 'default config value',
+
+		
+	/**
+	 * API endpoint host
+	 */
+//	'endpoint_Host' => 'http://cursozf2.local',		
+
+	/**
+	 * Albums API endpoint
+	 */
+//	'endpoint_Albums' => '/albums',
+
+	/**
+	 * Albums with data API endpoint
+	 */
+//	'endpoint_AlbumsData' => '/albums/%s',
+	
+	/**
+     * Use Redirect Parameter If Present
+     * 
+     * Accepted values: boolean true or false
+     */
+// 	'use_redirect_parameter_if_present' => true,
+
+	/**
+	 * The force route/url you want to redirect to after the POST
+	 *
+	 * @var string
+	 * Default value: null
+	 */
+//	'redirect_route' => null,
+		
+/**
+ * End of ZfcUser configuration
+ */
+);
+		
+/**
+ * You do not need to edit below this line
+ */
+return array(
+		'album' => $settings,		
+);

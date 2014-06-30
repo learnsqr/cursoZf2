@@ -3,16 +3,28 @@ $title = 'My albums APIGILITY CLIENT';
 $this->headTitle($title);
 ?>
 <h1><?php echo $this->escapeHtml($title); ?></h1>
+
+<?php 
+$flash = $this->flashMessenger();
+if (isset($flash)) : 
+	echo $flash->render('error',   array('alert', 'alert-dismissable', 'alert-danger'));
+	echo $flash->render('info',    array('alert', 'alert-dismissable', 'alert-info'));
+	echo $flash->render('default', array('alert', 'alert-dismissable', 'alert-warning'));
+	echo $flash->render('success', array('alert', 'alert-dismissable', 'alert-success'));
+endif;
+?>
+
 <p>
     <a href="<?php echo $this->url('albumapigility', array('action'=>'add'));?>">Add new album</a>
 </p>
-
+<?php /*?>
 <table class="table">
 <tr>
     <th>Title</th>
     <th>Artist</th>
     <th>&nbsp;</th>
 </tr>
+
 <?php foreach ($albums as $album) : ?>
 <tr>
     <td><?php echo $this->escapeHtml($album->title);?></td>
@@ -26,3 +38,42 @@ $this->headTitle($title);
 </tr>
 <?php endforeach; ?>
 </table>
+
+<?php */?>
+
+<table class="table">
+<tr>
+    <th>Title</th>
+    <th>Artist</th>
+    <th>&nbsp;</th>
+</tr>
+<?php foreach ($this->paginator as $album) : ?>
+<tr>
+    <td><?php echo $this->escapeHtml($album->title);?></td>
+    <td><?php echo $this->escapeHtml($album->artist);?></td>
+    <td>
+        <a href="<?php echo $this->url('albumapigility',
+            array('action'=>'edit', 'id' => $album->id));?>">Edit</a>
+        <a href="<?php echo $this->url('albumapigility',
+            array('action'=>'delete', 'id' => $album->id));?>">Delete</a>
+    </td>
+</tr>
+<?php endforeach; ?>
+</table>
+
+
+ <?php
+ // add at the end of the file after the table
+ echo $this->paginationControl(
+     // the paginator object
+     $this->paginator,
+     // the scrolling style
+     'sliding',
+     // the partial to use to render the control
+     array('partial/paginator.phtml', 'Album'),
+     // the route to link to when a user clicks a control link
+     array(
+         'route' => 'albumapigility'
+     )
+ );
+ ?>
