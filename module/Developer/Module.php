@@ -41,4 +41,17 @@ class Module extends \Zend\View\Helper\AbstractHelper
         if (!class_exists('Michelf\Markdown')) require_once __DIR__ . '/vendor/php-markdown/Michelf/Markdown.inc.php';
         return \Michelf\Markdown::defaultTransform($string);
     }
+    
+    public function getServiceConfig() {
+    	return array(
+    			'factories' => array(
+    					'Zend\Log\FirePhp' => function($sm) {
+    						$writer_firebug = new \Zend\Log\Writer\FirePhp();
+    						$logger = new \Zend\Log\Logger();
+    						$logger->addWriter($writer_firebug);
+    						return $logger;
+    					},
+    			),
+    	);
+    }
 }
