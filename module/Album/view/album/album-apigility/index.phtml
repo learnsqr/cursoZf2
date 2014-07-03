@@ -53,9 +53,11 @@ endif;
     <td><?php echo $this->escapeHtml($album->artist);?></td>
     <td>
         <a href="<?php echo $this->url('albumapigility',
-            array('action'=>'edit', 'id' => $album->id));?>">Edit</a>
+            array('action'=>'edit', 'id' => $album->id));?>">Edit</a> | 
         <a href="<?php echo $this->url('albumapigility',
-            array('action'=>'delete', 'id' => $album->id));?>">Delete</a>
+            array('action'=>'delete', 'id' => $album->id));?>">Delete</a> | 
+       <a href="<?php echo $this->url('albumapigility',
+            array('action'=>'deletewithauth', 'id' => $album->id));?>">Delete with auth</a>
     </td>
 </tr>
 <?php endforeach; ?>

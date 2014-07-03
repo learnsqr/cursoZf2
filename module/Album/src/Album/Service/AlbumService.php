@@ -33,6 +33,11 @@ class AlbumService implements AlbumServiceInterface
     protected $options;
     
     /**
+     * @var array
+     */
+    protected static $token = null;
+      
+    /**
      * Holds the client we will reuse in this class
      *
      * @var Client
@@ -43,8 +48,42 @@ class AlbumService implements AlbumServiceInterface
     public function __construct(AbstractOptions $options, ServiceLocatorInterface $serviceLocator)
     {    
     	$this->options		  = $options;
-    	$this->serviceLocator = $serviceLocator;    	
+    	$this->serviceLocator = $serviceLocator;    
+    	$this->setToken();	
     }
+    
+    public function setToken()
+    {
+    	$url = 'http://cursozf2.local/oauth';
+    	$data=array(
+					    "grant_type"=>"client_credentials",
+					    "client_id"=>"testclient",
+					    "client_secret"=>"testpass"  
+					);
+    	
+    	$authorization = self::doRequest($url,Json::TYPE_OBJECT,$data,Request::METHOD_POST);
+//     	\Zend\Debug\Debug::dump($authorization);
+    	self::$token = $authorization;
+//     	\Zend\Debug\Debug::dump(self::$token->token_type);
+    	 
+//     	die;
+    	
+    	return $authorization;
+    }
+    
+    
+    /**
+	 * @return the $token
+	 */
+	public function getToken() {
+		if (!isset(self::$token)) {
+// 			$this->setToken($this->getServiceManager()->get('zfcuser_module_options'));
+			$this->setToken();
+		}
+		return self::$token;
+		
+	}
+
     
     /**
      * The default action - show the home page
@@ -164,10 +203,10 @@ class AlbumService implements AlbumServiceInterface
 		
 		if ($postData !== null)
 			$client->setParameterPost($postData);
-	
+				    	
 		$client->setHeaders(array('Accept' 			=> 'application/vnd.music.v1+json',
 								  'Content-Type' 	=> 'application/json',
-								  'Accept-Encoding'	=> 'UTF-8',	
+								  'Accept-Encoding'	=> 'UTF-8',								  
 		));
 		
 		if ($postData !== null) {
@@ -189,5 +228,49 @@ class AlbumService implements AlbumServiceInterface
 			return $response->getBody();
 		}
 	}
-
+	
+	/**
+	 * Perform a request to the API
+	 *
+	 * @param string $url
+	 * @param array $postData
+	 * @param Client $client
+	 * @return Zend\Http\Response
+	 */
+	protected static function doRequestAuth($url, $decodeType = Json::TYPE_OBJECT, array $postData = null,  $method = Request::METHOD_GET)
+	{
+		$client = self::getClientInstance();
+		$client->setUri($url);
+		$client->setMethod($method);
+	
+		if ($postData !== null)
+			$client->setParameterPost($postData);
+	
+	
+		 
+		$client->setHeaders(array('Accept' 			=> 'application/vnd.music.v1+json',
+									'Content-Type' 	=> 'application/json',
+									'Accept-Encoding'	=> 'UTF-8',
+									'Authorization'	=> self::$token->token_type.' '.self::$token->access_token,
+		));
+	
+		if ($postData !== null) {
+		$client->setRawBody(Json::encode($postData, true));
+		$client->setEncType('application/json');
+		}
+				$response = $client->send();
+	
+				if ($response->isSuccess())
+				{
+				return JsonDecoder::decode($response->getBody(), $decodeType);
+				}
+				else
+				{
+					// FIXME: Remove on production
+						$logger = new Logger;
+						$logger->addWriter(new Stream('data/logs/apiclient.log'));
+			$logger->debug($response->getBody());
+				return $response->getBody();
+					}
+					}
 }

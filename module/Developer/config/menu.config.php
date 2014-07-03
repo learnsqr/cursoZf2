@@ -65,11 +65,7 @@ return array(
 	    	    								'route' => 'markdown',
 	    	    								'params'     => array('filename' => 'erratas')
 	    	    						),
-	    	    						array(
-	    	    								'label' => 'Apigility',
-	    	    								'route' => 'markdown',
-	    	    								'params'     => array('filename' => 'apigility')
-	    	    						),
+	    	    						
 	    	    						
 	    	    				),
 	    	    		),
@@ -164,7 +160,12 @@ return array(
 	    	    								'label' => 'Api Considerations',
 	    	    								'route' => 'markdown',
 	    	    								'params'     => array('filename' => 'api-considerations')
-	    	    						),	    	    						
+	    	    						),	
+	    	    						array(
+	    	    								'label' => 'Apigility',
+	    	    								'route' => 'markdown',
+	    	    								'params'     => array('filename' => 'apigility')
+	    	    						),
 	    	    				),
 	    	    		),
 	    	    ),

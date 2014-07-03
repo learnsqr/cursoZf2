@@ -35,8 +35,83 @@ class AlbumApigilityController extends AbstractActionController
 		));
 	}	
 	
+	public function deletewithauthAction()
+	{
+		// Start form, get things and read options, config and stuff
+		$request = $this->getRequest();
+		$service = $this->getServiceLocator()->get('Album\Service\AlbumService');
+		$form = $this->getServiceLocator()->get('Album\Form\AlbumForm');
+			
+		if ($this->getOptions()->getUseRedirectParameterIfPresent() && $request->getQuery()->get('redirect')) {
+			$redirect = $request->getQuery()->get('redirect');
+		} else {
+			$redirect = false;
+		}
+	
+		// Pass in the route/url you want to redirect to after the POST
+		$redirectUrl = $this->url()->fromRoute($this->getOptions()->getRedirectRoute(), array('action'=>'delete')).($redirect?'?redirect='.$redirect:'');
+		$prg = $this->prg($redirectUrl, true);
+		
+		// Get Token
+		
+		$token = $service->getToken();
+		
+		
+		if ($prg instanceof Response) {
+			// Returned a response to redirect us
+			return $prg;
+		} elseif ($prg === false) {
+			$this->flashMessenger()->clearMessages();
+			// this wasn't a POST request, but there were no params in the flash messenger
+			// probably this is the first time the form was loaded
+			// Get params
+			$albumId = $this->getEvent()->getRouteMatch()->getParam('id');
+			if (!$albumId) {
+				return $this->redirect()->toRoute($this->getOptions()->getRedirectRoute(), array('action'=>'index'));
+			}
+			// Get entity
+			$album = $service->fetch($albumId);
+			$form->bind($album);
+			return array(
+					'form' => $form,
+					'redirect' => $redirect,
+			);
+		}
+	
+		// Form was submitted.
+		// $prg is now an array containing the POST params from the previous request,
+		// but we don't have to apply it to the form since that has already been done.
+		$post = $prg;
+		$form->setData($prg);
+		if (!$form->isValid()) {
+			$this->flashMessenger()->addMessage('Please check the form errors.');
+			return array(
+					'form' => $form,
+					'redirect' => $redirect,
+			);
+		}
+	
+		// Process the form
+		$album=$form->getHydrator()->extract($form->getObject());
+		$album = $service->delete($album);
+	
+		$redirect = isset($prg['redirect']) ? $prg['redirect'] : null;
+	
+		if (!$album) {
+			$this->flashMessenger()->addErrorMessage('Oops... some error here.');
+			return array(
+					'form' => $form,
+					'redirect' => $redirect,
+			);
+		}
+	
+		$this->flashMessenger()->addSuccessMessage('Album deleted correctly.');
+		// TODO: Add the redirect parameter here...
+		return $this->redirect()->toUrl($this->url()->fromRoute($this->getOptions()->getRedirectRoute(), array('action'=>'index')) . ($redirect ? '?redirect='.$redirect : ''));
+	}
+	
 	public function deleteAction()
-{		
+	{		
 		// Start form, get things and read options, config and stuff
 		$request = $this->getRequest();
 		$service = $this->getServiceLocator()->get('Album\Service\AlbumService');		
