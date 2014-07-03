@@ -1,5 +1,6 @@
 # Create an API using Apigility
-Ref: Apigility Intro [PDF presentation - `Rob Allen`, March 2014](http://akrabat.com/wp-content/uploads/20140318-phpne-apigility-intro.pdf "Apigility Intro.").  
+Ref: 
+	* Apigility Intro [PDF presentation - `Rob Allen`, March 2014](http://akrabat.com/wp-content/uploads/20140318-phpne-apigility-intro.pdf "Apigility Intro.").  
 
 
 # Start Server
@@ -154,7 +155,7 @@ API Problem - application/problem+json
 	 "status": 401
 	}
 
-# Authorisation
+# Authorization
 
 	GET /albums/1 HTTP/1.1
 	Accept: application/json

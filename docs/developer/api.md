@@ -1,6 +1,7 @@
 # Create an API using Apigility
-Ref: Apigility Intro [PDF presentation - `Rob Allen`, March 2014](http://akrabat.com/wp-content/uploads/20140318-phpne-apigility-intro.pdf "Apigility Intro.").  
-
+Ref:   
+	* Apigility Intro [PDF presentation - `Rob Allen`, March 2014](http://akrabat.com/wp-content/uploads/20140318-phpne-apigility-intro.pdf "Apigility Intro.").  
+	* Apigility Video [Apigility Video](https://docs.google.com/file/d/0B3DjV-SlG3QbUnFNMTZ2RnhfSkk/preview "Apigility Video.").  
 
 # Start Server
 

@@ -183,7 +183,19 @@ for instance, at the top of a controller, where $this->server is an instance of 
 	    return;
 	}
 
+## Use Token (Bearer)
 
+### Request
+
+	DELETE /albums/42 HTTP/1.1
+	Host: cursozf2.local
+	Authorization: Bearer 34d4c0a12be128c7115e82e31ab265b9189c99ad
+	Accept: application/vnd.music.v2+json
+	Cache-Control: no-cache
+	
+### Response
+	
+	204 No Content
 
 
  
