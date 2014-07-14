@@ -31,12 +31,7 @@
 	<br/>
 	
 	<h3 class="panel-title"><?php echo $this->translate('API') ?></h3>
-	<pre> Session:
-	<?php 
-		if(isset($_SESSION))
-			\Zend\Debug\Debug::dump($_SESSION);
-	?>
-	</pre>
+	<?php echo $this->zfcUserIdentity()->getDisplayname(); ?>
 		
 	<br/>
 	

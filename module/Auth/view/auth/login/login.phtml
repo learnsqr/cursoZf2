@@ -20,4 +20,14 @@
  echo $this->formRow($form->get('username'));
  echo $this->formRow($form->get('password'));
  echo $this->formSubmit($form->get('submit'));
+ echo $this->formCollection($form);
  echo $this->form()->closeTag();
+ 
+ if ($this->messages){
+ 	echo '<ul>';
+ 	foreach($this->messages as $message)
+ 	{
+ 		echo '<li>'.$message.'</li>';
+ 	}
+ 	echo '</ul>';
+ }
