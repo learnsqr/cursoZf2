@@ -1,6 +1,10 @@
 Markdown: Syntax
 ================
 
+Ref:  
+
+* <sup>1</sup> Coury, Evan. __"A minimalist ZF2 module for adding markdown support to Zend Framework 2 projects."__ _EdpMarkdown_  [EdpMarkdown](https://github.com/EvanDotPro/EdpMarkdown "EdpMarkdown.").
+	
 <ul id="ProjectSubmenu">
     <li><a href="/projects/markdown/" title="Markdown Project Page">Main</a></li>
     <li><a href="/projects/markdown/basics" title="Markdown Basics">Basics</a></li>
