@@ -166,6 +166,11 @@ return array(
 	    	    								'route' => 'markdown',
 	    	    								'params'     => array('filename' => 'apigility')
 	    	    						),
+    	    	    				    array(
+    	    	    				    		'label' => 'Apigility Admin Create',
+    	    	    				    		'route' => 'markdown',
+    	    	    				    		'params'     => array('filename' => 'apigilityadmin')
+    	    	    				    ),
 	    	    				),
 	    	    		),
 	    	    ),

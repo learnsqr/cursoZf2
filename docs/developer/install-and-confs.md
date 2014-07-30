@@ -44,4 +44,8 @@ Aparece este mensaje al intentar abrir apigility en un proyecto
    
 2. Desabilitar directivas de cache en virtual host:  
 	php_admin_value zend_optimizerplus.enable 0
+	
+## Review this video
+
+http://www.youtube.com/watch?v=EZzfhTqorA0&t=14m31s
     

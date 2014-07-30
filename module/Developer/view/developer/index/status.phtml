@@ -31,7 +31,10 @@
 	<br/>
 	
 	<h3 class="panel-title"><?php echo $this->translate('API') ?></h3>
-	<?php echo $this->zfcUserIdentity()->getDisplayname(); ?>
+	<?php 
+	   if($this->zfcUserIdentity())
+	       echo $this->zfcUserIdentity()->getDisplayname();
+	?>
 		
 	<br/>
 	
