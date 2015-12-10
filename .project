@@ -20,11 +20,21 @@
 			<arguments>
 			</arguments>
 		</buildCommand>
+		<buildCommand>
+			<name>org.zend.php.zendserver.deployment.core.DeploymentBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>com.zend.php.composer.core.ComposerJsonBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
 	</buildSpec>
 	<natures>
 		<nature>org.zend.php.framework.ZendFrameworkNature</nature>
 		<nature>org.eclipse.php.core.PHPNature</nature>
 		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
+		<nature>org.zend.php.zendserver.deployment.core.DeploymentNature</nature>
 	</natures>
 </projectDescription>
-

@@ -21,7 +21,7 @@
         "firephp/firephp-core" : "dev-master",
         "bjyoungblood/bjy-profiler": "dev-master",
         "zendframework/zend-developer-tools": "dev-master",
-        "hybridauth/hybridauth": "2.2.*",        
+        "hybridauth/hybridauth": "2.*",        
         "socalnick/scn-social-auth": "dev-master",        
         "bjyoungblood/bjy-authorize": "dev-master",
         "zendframework/zendoauth" : "=2.0.2",     
